@@ -36,7 +36,7 @@ function App() {
                         /**
                          * Sobald alle animiert wurden, iterieren wir
                          * die maskRefs durch, welche während des Renders ins Array gepusht wurden,
-                         * um die restlichen Text einzublenden
+                         * um die restlichen Texte einzublenden.
                          */
                         maskRefs.current.forEach((m) => {
                             gsap.to(m, {
