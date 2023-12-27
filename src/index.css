@@ -8,9 +8,34 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
+    --background-100: #323548;
+    --background-200: #262736;
+    --background-300: #1A1C25;
+    --background-400: #13141C;
     --background-base: #0e0f17;
+    --background-600: #0B0C13;
+    --background-700: #080910;
+    --text-1-100: #F5F6F4;
+    --text-1-200: #E9EBE8;
+    --text-1-base: #DEE0D6;
+    --text-1-400: #D3D5C4;
+    --text-1-500: #C8CAB2;
+    --text-1-600: #BDC0A0;
+    --text-1-700: #B2B58E;
+    --text-1-100: #F7F8F6;
+    --text-1-200: #EBEDEA;
+    --text-1-300: #E0E2DF;
+    --text-1-400: #D4D7D3;
+    --text-2-base: #E2E5DB;
+    --text-1-600: #C9CCBE;
+    --text-1-700: #BDBFAC;
     --primary-base: #749bff;
-    --text-2-base: #e2e5db;
+    --primary-1-500: #6288DB;
+    --primary-1-600: #4F74B8;
+    --primary-1-700: #3C6194;
+    --secondary-1-100: #D6E1FF;
+    --secondary-1-200: #B9C7FF;
+    --secondary-1-300: #9CADE5;
 }
 
 body {
