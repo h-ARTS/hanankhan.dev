@@ -1,5 +1,6 @@
-import gsap from "gsap"
 import { useEffect, useRef } from "react"
+import gsap from "gsap"
+import Header from "./components/Header"
 
 function App() {
     const lineRefs = useRef([])
@@ -24,8 +25,9 @@ function App() {
              */
             gsap.to(firstLetter, {
                 delay: index * 0.5,
-                duration: 1,
+                duration: 0.75,
                 translateY: 0,
+                ease: "power1.inOut",
                 /**
                  * Sobald eine Buchstabe fertig animiert wurde, zählen wir
                  * den completedS hoch.
@@ -64,24 +66,29 @@ function App() {
     }
 
     return (
-        <header>
-            {contents.map((c, index) => (
-                <div
-                    className={`line ${c.className}`}
-                    key={index}
-                    ref={(el) => addToRefs(el, lineRefs)}
-                >
-                    <span className="first-letter">S</span>
-                    <span className="rest">
-                        <span
-                            ref={(el) => addToRefs(el, maskRefs)}
-                            className="mask"
-                        ></span>
-                        <span>{c.label}</span>
-                    </span>
-                </div>
-            ))}
-        </header>
+        <>
+            <Header />
+            <section className="container">
+                {/* <div className="col-12">
+                    {contents.map((c, index) => (
+                        <div
+                            className={`line ${c.className}`}
+                            key={index}
+                            ref={(el) => addToRefs(el, lineRefs)}
+                        >
+                            <span className="first-letter">S</span>
+                            <span className="rest">
+                                <span
+                                    ref={(el) => addToRefs(el, maskRefs)}
+                                    className="mask"
+                                ></span>
+                                <span>{c.label}</span>
+                            </span>
+                        </div>
+                    ))}
+                </div> */}
+            </section>
+        </>
     )
 }
 
