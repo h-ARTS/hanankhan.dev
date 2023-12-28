@@ -28,7 +28,7 @@
     color: var(--text-2-base);
     letter-spacing: 3.91px;
     text-transform: uppercase;
-    z-index: 2;
+    z-index: 11;
 }
 
 .logo .first {
@@ -51,7 +51,7 @@
 .burger-icon {
     position: relative;
     height: 38px;
-    z-index: 2;
+    z-index: 11;
 }
 
 .burger-icon span {

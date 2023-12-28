@@ -1,9 +1,9 @@
 import { useRef, useEffect } from "react"
 import { useMediaQuery } from "react-responsive"
 import gsap from "gsap"
-import LabelMobile from "./LabelMobile"
-import Label from "./Label"
-import GestureHint from "./GeastureHint"
+import LabelMobile from "../LabelMobile"
+import Label from "../Label"
+import GestureHint from "../GeastureHint"
 
 const HeroSection = () => {
     const isMobile = useMediaQuery({ query: "(max-width: 576px)" })
@@ -108,7 +108,7 @@ const HeroSection = () => {
                             ) : (
                                 <Label
                                     content={c}
-                                    key={c}
+                                    key={idx}
                                     lineRefs={lineRefs}
                                     maskRefs={maskRefs}
                                     addToRefs={addToRefs}

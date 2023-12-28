@@ -1,4 +1,5 @@
 import React from "react"
+import "./css/GeastureHint.css"
 import swipeUpSvg from "../assets/swipe-up.svg"
 
 const GestureHint = () => (
