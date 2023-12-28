@@ -1,8 +1,11 @@
 import { useEffect, useRef } from "react"
 import gsap from "gsap"
 import Header from "./components/Header"
+import { useMediaQuery } from "react-responsive"
+import "./App.css"
 
 function App() {
+    const isMobile = useMediaQuery({ query: "(max-width: 576px)" })
     const lineRefs = useRef([])
     const maskRefs = useRef([])
     const contents = [
@@ -13,6 +16,28 @@ function App() {
     ]
 
     useEffect(() => {
+        if (isMobile) {
+            runHeroAnimationMobile()
+        } else {
+            runHeroAnimation()
+        }
+    }, [])
+
+    const runHeroAnimationMobile = () => {
+        const tl = gsap.timeline({
+            paused: true,
+            defaults: { ease: "power1.in" },
+        })
+        tl.to(".mask", {
+            y: 0,
+            duration: 0.7,
+            stagger: 0.2,
+        })
+            .fromTo("h2.rest", { opacity: 0 }, { opacity: 1, delay: 0.5 }, "0")
+            .play()
+    }
+
+    const runHeroAnimation = () => {
         const totalS = lineRefs.current.length
         let completedS = 0
 
@@ -33,6 +58,7 @@ function App() {
                  * den completedS hoch.
                  */
                 onComplete: () => {
+                    console.log("completed")
                     completedS++
                     if (completedS === totalS) {
                         /**
@@ -51,7 +77,7 @@ function App() {
                 },
             })
         })
-    }, [])
+    }
 
     /**
      * Damit wir die Elemente ins Refs (siehe oben) speichern können.
@@ -68,25 +94,47 @@ function App() {
     return (
         <>
             <Header />
-            <section className="container">
-                {/* <div className="col-12">
-                    {contents.map((c, index) => (
-                        <div
-                            className={`line ${c.className}`}
-                            key={index}
-                            ref={(el) => addToRefs(el, lineRefs)}
-                        >
-                            <span className="first-letter">S</span>
-                            <span className="rest">
-                                <span
-                                    ref={(el) => addToRefs(el, maskRefs)}
-                                    className="mask"
-                                ></span>
-                                <span>{c.label}</span>
-                            </span>
+            <section className="hero container g-0">
+                <div className="row g-0">
+                    <div className="col">
+                        <div className="hero-text">
+                            {isMobile
+                                ? contents.map((c, idx) => (
+                                      <div
+                                          className={`line ${c.className}`}
+                                          key={idx}
+                                          ref={(el) => addToRefs(el, lineRefs)}
+                                      >
+                                          <h2 className="rest">
+                                              <span className="mask">
+                                                  S{c.label}
+                                              </span>
+                                          </h2>
+                                      </div>
+                                  ))
+                                : contents.map((c, index) => (
+                                      <div
+                                          className={`line ${c.className}`}
+                                          key={index}
+                                          ref={(el) => addToRefs(el, lineRefs)}
+                                      >
+                                          <span className="first-letter">
+                                              S
+                                          </span>
+                                          <span className="rest">
+                                              <span
+                                                  ref={(el) =>
+                                                      addToRefs(el, maskRefs)
+                                                  }
+                                                  className="mask"
+                                              ></span>
+                                              <span>{c.label}</span>
+                                          </span>
+                                      </div>
+                                  ))}
                         </div>
-                    ))}
-                </div> */}
+                    </div>
+                </div>
             </section>
         </>
     )

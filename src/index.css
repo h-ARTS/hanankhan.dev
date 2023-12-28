@@ -51,43 +51,6 @@ body {
     line-height: 1;
 }
 
-.line {
-    display: flex;
-    overflow: hidden;
-    white-space: nowrap;
-    font-size: 130px;
-    font-weight: 600;
-    user-select: none;
-}
-
-.first-letter {
-    display: inline-block;
-    transform: translateY(-100%); /* Hide the letters initially */
-}
-
-.rest {
-    position: relative;
-    overflow: hidden;
-    white-space: nowrap;
-}
-
-.rest span.mask {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: var(--background-base);
-    width: 100%;
-    z-index: 3;
-}
-
-.rest span {
-    position: relative;
-    display: inline-block;
-    z-index: 2;
-}
-
 .text-base {
     color: var(--text-2-base);
 }
