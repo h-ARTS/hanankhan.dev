@@ -38,6 +38,7 @@ const Header = () => {
             }, "<")
 
             .to("body", { overflow: "hidden" }, "<")
+            .to(".overlay", { zIndex: 1 }, "<")
             .to(
                 path.current,
                 {

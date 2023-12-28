@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react"
 import gsap from "gsap"
 import Header from "./components/Header"
+import swipeUpSvg from "./assets/swipe-up.svg"
 import { useMediaQuery } from "react-responsive"
 import "./App.css"
 
@@ -133,6 +134,10 @@ function App() {
                                       </div>
                                   ))}
                         </div>
+                        <button className="gesture-hint">
+                            <img src={swipeUpSvg} alt="swipe up" />
+                            <h5>SWIPE UP</h5>
+                        </button>
                     </div>
                 </div>
             </section>
