@@ -1,0 +1,11 @@
+import React from "react"
+import swipeUpSvg from "../assets/swipe-up.svg"
+
+const GestureHint = () => (
+    <button className="gesture-hint">
+        <img src={swipeUpSvg} alt="swipe up" />
+        <h5>SWIPE UP</h5>
+    </button>
+)
+
+export default GestureHint

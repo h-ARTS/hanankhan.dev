@@ -1,14 +1,13 @@
 import { useRef, useEffect, useState } from "react"
-import "./Header.css"
+import "./css/Header.css"
 import gsap from "gsap"
+import BurgerMenu from "./BurgerMenu"
+import Logo from "./Logo"
+import Overlay from "./Overlay"
 
 const BACKGROUND_400 = "#13141C"
 
 const Header = () => {
-    const viewBox = `0 0 ${window.innerWidth * window.devicePixelRatio} ${
-        window.innerHeight * window.devicePixelRatio
-    }`
-
     const start = "M0 0H1170V2532C780 1688 1171 75 214 75-164 69-202 97-202 0Z"
     const end =
         "M0 0H1170V2532C-1949 2503-1937 2512-887 447-876 63-796 5-313 0Z"
@@ -93,7 +92,6 @@ const Header = () => {
 
     const toggleMenu = (e) => {
         e.stopPropagation()
-        console.log("hello")
 
         setIsMenuOpen((prevState) => {
             if (!prevState) {
@@ -112,53 +110,15 @@ const Header = () => {
                 <div className="container-sm g-0">
                     <div className="row">
                         <div className="col-6">
-                            <div ref={myLogo} className="logo">
-                                <p className="logo first">Hanan</p>
-                                <p className="logo last">Khan</p>
-                            </div>
+                            <Logo ref={myLogo} />
                         </div>
                         <div className="col-6">
-                            <nav className="menu">
-                                <div
-                                    className="burger-icon"
-                                    onClick={(e) => toggleMenu(e)}
-                                >
-                                    <span ref={burger}></span>
-                                </div>
-                            </nav>
+                            <BurgerMenu onClick={toggleMenu} ref={burger} />
                         </div>
                     </div>
                 </div>
             </header>
-            <div className="overlay">
-                <div className="container g-0 mobile-menu">
-                    <nav className="row list">
-                        <ul className="col-12" ref={menuRef}>
-                            <li>
-                                <a href="#">about</a>
-                            </li>
-                            <li>
-                                <a href="#">work</a>
-                            </li>
-                            <li>
-                                <a href="#">my journey</a>
-                            </li>
-                            <li>
-                                <a href="#">contact</a>
-                            </li>
-                            <li>
-                                <a href="#">blog</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-                <svg viewBox={viewBox} preserveAspectRatio="xMidYMid meet">
-                    <path
-                        ref={path}
-                        d="M1170 1H1170V2532C1170 2503 1170 0 1170 0 1170 0 1170 0 1170 0Z"
-                    ></path>
-                </svg>
-            </div>
+            <Overlay pathRef={path} menuRef={menuRef} />
         </>
     )
 }
