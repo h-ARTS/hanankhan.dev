@@ -1,10 +1,11 @@
 import React from "react"
-import "./css/AboutSection.css"
+import { useRef } from "react"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
 import ScrollTrigger from "gsap/ScrollTrigger"
 import SplitType from "split-type"
-import { useRef } from "react"
+import Typography from "../components/Typography"
+import "./css/AboutSection.css"
 
 const AboutSection = () => {
     const reveal = useRef([])
@@ -29,7 +30,12 @@ const AboutSection = () => {
         <section className="about container g-0">
             <div className="row g-0">
                 <div className="col">
-                    <h3 className="heading">ABOUT ME</h3>
+                    <Typography
+                        tag="h3"
+                        className="text upper normal spread bold"
+                    >
+                        ABOUT ME
+                    </Typography>
                     <p ref={reveal}>
                         I'm a{" "}
                         <span className="text-primary">

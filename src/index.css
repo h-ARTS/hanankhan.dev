@@ -23,13 +23,13 @@
     --text-1-500: #c8cab2;
     --text-1-600: #bdc0a0;
     --text-1-700: #b2b58e;
-    --text-1-100: #f7f8f6;
-    --text-1-200: #ebedea;
-    --text-1-300: #e0e2df;
-    --text-1-400: #d4d7d3;
+    --text-2-100: #f7f8f6;
+    --text-2-200: #ebedea;
+    --text-2-300: #e0e2df;
+    --text-2-400: #d4d7d3;
     --text-2-base: #e2e5db;
-    --text-1-600: #c9ccbe;
-    --text-1-700: #bdbfac;
+    --text-2-600: #c9ccbe;
+    --text-2-700: #bdbfac;
     --primary-base: #749bff;
     --primary-1-500: #6288db;
     --primary-1-600: #4f74b8;
@@ -57,4 +57,8 @@ body {
 
 .text-primary {
     color: var(--primary-base);
+}
+
+.text-right {
+    text-align: right;
 }
