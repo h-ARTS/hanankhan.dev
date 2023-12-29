@@ -4,7 +4,6 @@ import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
 import ScrollTrigger from "gsap/ScrollTrigger"
 import SplitType from "split-type"
-import { useLayoutEffect } from "react"
 import { useRef } from "react"
 
 const AboutSection = () => {
@@ -17,7 +16,7 @@ const AboutSection = () => {
         gsap.from(text.chars, {
             scrollTrigger: {
                 trigger: reveal.current,
-                start: "-=30% 70%",
+                start: "-=26% 70%",
                 end: "top 10%",
                 scrub: true,
             },

@@ -33,7 +33,6 @@ const HeroSection = () => {
                 scrub: false,
                 start: "top center",
                 end: `${window.innerHeight}svh center`,
-                toggleActions: "play reverse play reverse",
             },
             paused: true,
             defaults: { ease: "power1.in" },
