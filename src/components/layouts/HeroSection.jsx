@@ -34,7 +34,6 @@ const HeroSection = () => {
                 start: "top center",
                 end: `${window.innerHeight}svh center`,
                 toggleActions: "play reverse play reverse",
-                markers: true,
             },
             paused: true,
             defaults: { ease: "power1.in" },
