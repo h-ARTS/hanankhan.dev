@@ -3,9 +3,9 @@ import { useMediaQuery } from "react-responsive"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
 import ScrollTrigger from "gsap/ScrollTrigger"
-import LabelMobile from "../LabelMobile"
-import Label from "../Label"
-import GestureHint from "../GeastureHint"
+import LabelMobile from "../components/LeadLabelMobile"
+import Label from "../components/LeadLabel"
+import GestureHint from "../components/GeastureHint"
 
 const HeroSection = () => {
     gsap.registerPlugin(ScrollTrigger)

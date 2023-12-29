@@ -1,8 +1,8 @@
-import { useEffect, useRef } from "react"
 import "./App.css"
 import Header from "./components/Header"
-import HeroSection from "./components/layouts/HeroSection"
-import AboutSection from "./components/layouts/AboutSection"
+import HeroSection from "./layouts/HeroSection"
+import AboutSection from "./layouts/AboutSection"
+import ProjectShowcaseSection from "./layouts/ProjectShowcaseSection"
 
 function App({ lenis }) {
     return (
@@ -10,6 +10,7 @@ function App({ lenis }) {
             <Header />
             <HeroSection />
             <AboutSection />
+            <ProjectShowcaseSection />
         </>
     )
 }
