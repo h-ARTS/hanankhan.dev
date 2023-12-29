@@ -1,17 +1,17 @@
 import React from "react"
 import "./css/AboutSection.css"
 import gsap from "gsap"
+import { useGSAP } from "@gsap/react"
 import ScrollTrigger from "gsap/ScrollTrigger"
 import SplitType from "split-type"
-import { useEffect } from "react"
+import { useLayoutEffect } from "react"
 import { useRef } from "react"
 
 const AboutSection = () => {
     const reveal = useRef([])
+    gsap.registerPlugin(ScrollTrigger)
 
-    useEffect(() => {
-        gsap.registerPlugin(ScrollTrigger)
-
+    useGSAP(() => {
         const text = new SplitType(reveal.current, { types: "chars" })
 
         gsap.from(text.chars, {
@@ -20,12 +20,11 @@ const AboutSection = () => {
                 start: "top 70%",
                 end: "top 10%",
                 scrub: true,
-                markers: false,
             },
             opacity: 0.2,
             stagger: 0.2,
         })
-    }, [])
+    })
 
     return (
         <section className="about container g-0">

@@ -1,11 +1,14 @@
-import { useRef, useEffect } from "react"
+import { useRef } from "react"
 import { useMediaQuery } from "react-responsive"
 import gsap from "gsap"
+import { useGSAP } from "@gsap/react"
+import ScrollTrigger from "gsap/ScrollTrigger"
 import LabelMobile from "../LabelMobile"
 import Label from "../Label"
 import GestureHint from "../GeastureHint"
 
 const HeroSection = () => {
+    gsap.registerPlugin(ScrollTrigger)
     const isMobile = useMediaQuery({ query: "(max-width: 576px)" })
     const lineRefs = useRef([])
     const maskRefs = useRef([])
@@ -16,16 +19,23 @@ const HeroSection = () => {
         { label: "INCE 2015", className: "text-base" },
     ]
 
-    useEffect(() => {
+    useGSAP(() => {
         if (isMobile) {
             runHeroAnimationMobile()
         } else {
-            runHeroAnimation()
+            runHeroAnimation(lineRefs, maskRefs)
         }
-    }, [])
+    })
 
     const runHeroAnimationMobile = () => {
         const tl = gsap.timeline({
+            scrollTrigger: {
+                scrub: false,
+                start: "top center",
+                end: `${window.innerHeight}svh center`,
+                toggleActions: "play reverse play reverse",
+                markers: true,
+            },
             paused: true,
             defaults: { ease: "power1.in" },
         })
@@ -38,7 +48,7 @@ const HeroSection = () => {
             .play()
     }
 
-    const runHeroAnimation = () => {
+    const runHeroAnimation = (lineRefs, maskRefs) => {
         const totalS = lineRefs.current.length
         let completedS = 0
 

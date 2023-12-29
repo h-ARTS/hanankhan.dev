@@ -1,6 +1,7 @@
-import { useRef, useEffect, useState } from "react"
+import { useRef, useState } from "react"
 import "./css/Header.css"
 import gsap from "gsap"
+import { useGSAP } from "@gsap/react"
 import BurgerMenu from "./BurgerMenu"
 import Logo from "./Logo"
 import Overlay from "./Overlay"
@@ -19,7 +20,7 @@ const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const tl = useRef(gsap.timeline({ paused: true }))
 
-    useEffect(() => {
+    useGSAP(() => {
         const mainTl = gsap.timeline({ paused: true })
 
         mainTl
@@ -88,7 +89,7 @@ const Header = () => {
         })
 
         tl.current = { main: mainTl, menu: menuTl }
-    }, [])
+    })
 
     const toggleMenu = (e) => {
         e.stopPropagation()
