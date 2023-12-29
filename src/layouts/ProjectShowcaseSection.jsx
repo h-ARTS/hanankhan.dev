@@ -1,5 +1,6 @@
 import React from "react"
 import Typography from "../components/Typography"
+import ShowcaseItem from "../components/ShowcaseItem"
 import vibooImage from "../assets/viboo_concept_1.png"
 import nomos from "../assets/Nomos_Home_1.png"
 import digi from "../assets/digidev_1.png"
@@ -32,18 +33,7 @@ const ProjectShowcaseSection = () => {
             </Typography>
             <div className="showcases">
                 {items.map((item, idx) => (
-                    <div
-                        className={`showcase-item ${item.className}`}
-                        key={idx}
-                    >
-                        <img src={item.img} alt="Viboo - Mobile UI Design" />
-                        <Typography tag="h3" className="display text-primary">
-                            {item.title}
-                        </Typography>
-                        <Typography className="text caption upper spread bold">
-                            {item.caption}
-                        </Typography>
-                    </div>
+                    <ShowcaseItem item={item} key={idx} />
                 ))}
             </div>
         </section>
