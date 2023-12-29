@@ -17,7 +17,7 @@ const AboutSection = () => {
         gsap.from(text.chars, {
             scrollTrigger: {
                 trigger: reveal.current,
-                start: "top 70%",
+                start: "-=30% 70%",
                 end: "top 10%",
                 scrub: true,
             },
