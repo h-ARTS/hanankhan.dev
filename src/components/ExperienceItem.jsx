@@ -30,4 +30,6 @@ const ExperienceItem = React.forwardRef(({ className = "", content }, ref) => {
     )
 })
 
+ExperienceItem.displayName = "ExperienceItem"
+
 export default ExperienceItem

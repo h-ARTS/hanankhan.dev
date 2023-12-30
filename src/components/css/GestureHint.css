@@ -41,7 +41,7 @@
 }
 
 @media (min-width: var(--bs-breakpoint-md)) {
-    .geature-hint {
+    .gesture-hint {
         display: none;
     }
 }

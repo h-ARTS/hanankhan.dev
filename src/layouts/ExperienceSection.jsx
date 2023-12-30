@@ -2,7 +2,6 @@ import { useRef } from "react"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
 import ScrollTrigger from "gsap/ScrollTrigger"
-import SplitType from "split-type"
 import Typography from "../components/Typography"
 import Container from "../components/Container"
 import ExperienceItem from "../components/ExperienceItem"
@@ -57,7 +56,6 @@ const ExperienceSection = () => {
     const left = { x: -100 }
 
     useGSAP(() => {
-        // const text = new SplitType(desc.current, { types: "chars" })
         itemRefs.current.forEach((item, index) => {
             const isRight = Array.from(item.classList).includes("right")
             const propsCircle = isRight ? right : left
