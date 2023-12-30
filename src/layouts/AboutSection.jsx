@@ -5,8 +5,8 @@ import { useGSAP } from "@gsap/react"
 import ScrollTrigger from "gsap/ScrollTrigger"
 import SplitType from "split-type"
 import Typography from "../components/Typography"
-import "./css/AboutSection.css"
 import Container from "../components/Container"
+import "./css/AboutSection.css"
 
 const AboutSection = () => {
     const reveal = useRef([])

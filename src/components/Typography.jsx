@@ -1,7 +1,7 @@
 import React from "react"
 import "./css/Typography.css"
 
-const Typography = ({ tag = "p", className, children }) => {
+const Typography = ({ tag = "p", className = "", children }) => {
     return React.createElement(
         tag,
         {

@@ -31,12 +31,12 @@
     --text-2-600: #c9ccbe;
     --text-2-700: #bdbfac;
     --primary-base: #749bff;
-    --primary-1-500: #6288db;
-    --primary-1-600: #4f74b8;
-    --primary-1-700: #3c6194;
-    --secondary-1-100: #d6e1ff;
-    --secondary-1-200: #b9c7ff;
-    --secondary-1-300: #9cade5;
+    --primary-500: #6288db;
+    --primary-600: #4f74b8;
+    --primary-700: #3c6194;
+    --secondary-100: #d6e1ff;
+    --secondary-200: #b9c7ff;
+    --secondary-300: #9cade5;
 }
 
 * {

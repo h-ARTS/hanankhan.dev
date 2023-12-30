@@ -3,12 +3,6 @@
     margin-bottom: 1rem;
 }
 
-.about.container {
-    width: unset;
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-}
-
 .about p {
     color: var(--text-2-base);
     font-family: "Jost", sans-serif;
