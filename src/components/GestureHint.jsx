@@ -15,7 +15,6 @@ const GestureHint = () => {
                 start: () => `${innerHeight - 200}px center`,
                 end: () => `${innerHeight}px center`,
                 scrub: true,
-                markers: true,
             },
             opacity: 0,
             scale: 0,
