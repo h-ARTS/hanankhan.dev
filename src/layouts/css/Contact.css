@@ -1,0 +1,17 @@
+.contact {
+    margin-bottom: 3.62rem;
+}
+
+.contact a {
+    font-size: 1.25rem;
+    text-decoration: none;
+    line-height: 2rem;
+    letter-spacing: 0.0375rem;
+}
+
+.contact .email,
+.contact .github,
+.contact .linkedin,
+.contact .twitter {
+    margin-top: 3.13rem;
+}

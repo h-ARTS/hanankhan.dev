@@ -5,6 +5,7 @@ import AboutSection from "./layouts/AboutSection"
 import ProjectShowcaseSection from "./layouts/ProjectShowcaseSection"
 import ExperienceSection from "./layouts/ExperienceSection"
 import SkillsSection from "./layouts/SkillsSection"
+import Contact from "./layouts/Contact"
 
 function App({ lenis }) {
     return (
@@ -15,6 +16,7 @@ function App({ lenis }) {
             <ProjectShowcaseSection />
             <ExperienceSection />
             <SkillsSection />
+            <Contact />
         </>
     )
 }

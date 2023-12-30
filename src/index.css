@@ -51,6 +51,18 @@ body {
     line-height: 1;
 }
 
+a {
+    color: var(--secondary-300);
+}
+
+a:hover {
+    color: var(--secondary-100);
+}
+
+a:active {
+    color: var(--primary-base);
+}
+
 .text-base {
     color: var(--text-2-base);
 }
