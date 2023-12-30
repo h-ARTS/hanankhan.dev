@@ -4,6 +4,7 @@ import HeroSection from "./layouts/HeroSection"
 import AboutSection from "./layouts/AboutSection"
 import ProjectShowcaseSection from "./layouts/ProjectShowcaseSection"
 import ExperienceSection from "./layouts/ExperienceSection"
+import SkillsSection from "./layouts/SkillsSection"
 
 function App({ lenis }) {
     return (
@@ -13,6 +14,7 @@ function App({ lenis }) {
             <AboutSection />
             <ProjectShowcaseSection />
             <ExperienceSection />
+            <SkillsSection />
         </>
     )
 }

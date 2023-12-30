@@ -1,14 +1,17 @@
 import React from "react"
 import "./css/Typography.css"
 
-const Typography = ({ tag = "p", className = "", children }) => {
-    return React.createElement(
-        tag,
-        {
-            className: `typography ${className}`,
-        },
-        children
-    )
-}
+const Typography = React.forwardRef(
+    ({ tag = "p", className = "", children }, ref) => {
+        return React.createElement(
+            tag,
+            {
+                ref,
+                className: `typography ${className}`,
+            },
+            children
+        )
+    }
+)
 
 export default Typography
