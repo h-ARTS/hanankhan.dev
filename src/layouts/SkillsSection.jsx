@@ -19,7 +19,6 @@ const SkillsSection = () => {
                 start: "20% 10%",
                 end: `${window.innerHeight + 800}svh center`,
                 scrub: 1,
-                markers: true,
             },
         })
             .from(
