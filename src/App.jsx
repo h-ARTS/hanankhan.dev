@@ -3,6 +3,7 @@ import Header from "./components/Header"
 import HeroSection from "./layouts/HeroSection"
 import AboutSection from "./layouts/AboutSection"
 import ProjectShowcaseSection from "./layouts/ProjectShowcaseSection"
+import ExperienceSection from "./layouts/ExperienceSection"
 
 function App({ lenis }) {
     return (
@@ -11,6 +12,7 @@ function App({ lenis }) {
             <HeroSection />
             <AboutSection />
             <ProjectShowcaseSection />
+            <ExperienceSection />
         </>
     )
 }
