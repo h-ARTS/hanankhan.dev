@@ -20,14 +20,14 @@ const SkillsSection = () => {
                 pin: true,
                 trigger: ".skills",
                 start: "90px top",
-                end: () => `${innerHeight * 2}svh center`,
-                scrub: 1,
+                end: () => `${innerHeight * 3}svh center`,
+                scrub: true,
             },
         })
             .from(
                 marqueeText.current,
                 {
-                    scale: 10,
+                    scale: 8,
                     opacity: 0,
                 },
                 "0"
@@ -35,7 +35,7 @@ const SkillsSection = () => {
             .from(
                 marqueeText2.current,
                 {
-                    scale: 10,
+                    scale: 8,
                     opacity: 0,
                 },
                 "<0.2"

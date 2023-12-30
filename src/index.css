@@ -49,6 +49,7 @@ body {
     font-family: "Jost", sans-serif;
     background-color: var(--background-base);
     line-height: 1;
+    overflow-x: hidden;
 }
 
 a {

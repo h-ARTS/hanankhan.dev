@@ -71,8 +71,9 @@ const ExperienceSection = () => {
                 .timeline({
                     scrollTrigger: {
                         trigger: item,
-                        start: "-=10% center",
-                        end: "70% 70%",
+                        start: "-=5% top",
+                        end: "70% 20%",
+                        pin: true,
                         scrub: false,
                         toggleActions: "play none play reverse",
                     },
@@ -80,16 +81,17 @@ const ExperienceSection = () => {
                 .from(item.querySelector(".circle"), {
                     scale: 0,
                     ...propsCircle,
-                    duration: 1,
+                    duration: 0.6,
                 })
                 .from(item.querySelector(".line"), {
                     height: 0,
-                    duration: 1,
+                    duration: 0.6,
                     ease: "power3.out",
                 })
                 .from(item.querySelector(".content"), {
                     ...propsContent,
                     opacity: 0,
+                    duration: 0.6,
                 })
         })
     })
