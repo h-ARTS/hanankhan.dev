@@ -1,18 +1,21 @@
 import { useRef } from "react"
-import "./css/GeastureHint.css"
+import "./css/GestureHint.css"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
 import swipeUpSvg from "../assets/swipe-up.svg"
 
 const GestureHint = () => {
+    const gesture = useRef(null)
     const img = useRef(null)
+    const innerHeight = window.innerHeight
 
     useGSAP(() => {
-        gsap.to(".gesture-hint", {
+        gsap.to(gesture.current, {
             scrollTrigger: {
-                start: "+=30% center",
-                end: "40% center",
+                start: () => `${innerHeight - 200}px center`,
+                end: () => `${innerHeight}px center`,
                 scrub: true,
+                markers: true,
             },
             opacity: 0,
             scale: 0,
@@ -20,7 +23,7 @@ const GestureHint = () => {
     })
 
     return (
-        <button className="gesture-hint">
+        <button ref={gesture} className="gesture-hint">
             <div className="dot"></div>
             <img src={swipeUpSvg} ref={img} alt="swipe up" />
             <h5>SWIPE UP</h5>
