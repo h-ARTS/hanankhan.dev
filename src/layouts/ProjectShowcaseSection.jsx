@@ -5,6 +5,7 @@ import vibooImage from "../assets/viboo_concept_1.png"
 import nomos from "../assets/Nomos_Home_1.png"
 import digi from "../assets/digidev_1.png"
 import "./css/ProjectShowcases.css"
+import Container from "../components/Container"
 
 const ProjectShowcaseSection = () => {
     const items = [
@@ -27,7 +28,7 @@ const ProjectShowcaseSection = () => {
         },
     ]
     return (
-        <section className="project-showcases container g-0">
+        <Container className="project-showcases">
             <Typography tag="h3" className="text upper normal spread bold">
                 PROJECT SHOWCASES
             </Typography>
@@ -36,7 +37,7 @@ const ProjectShowcaseSection = () => {
                     <ShowcaseItem item={item} key={idx} />
                 ))}
             </div>
-        </section>
+        </Container>
     )
 }
 

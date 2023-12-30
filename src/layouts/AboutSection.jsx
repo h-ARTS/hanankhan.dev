@@ -6,6 +6,7 @@ import ScrollTrigger from "gsap/ScrollTrigger"
 import SplitType from "split-type"
 import Typography from "../components/Typography"
 import "./css/AboutSection.css"
+import Container from "../components/Container"
 
 const AboutSection = () => {
     const reveal = useRef([])
@@ -27,7 +28,7 @@ const AboutSection = () => {
     })
 
     return (
-        <section className="about container g-0">
+        <Container className="about">
             <div className="row g-0">
                 <div className="col">
                     <Typography
@@ -52,7 +53,7 @@ const AboutSection = () => {
                     </p>
                 </div>
             </div>
-        </section>
+        </Container>
     )
 }
 
