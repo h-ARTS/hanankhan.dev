@@ -1,3 +1,7 @@
+.experience-item {
+    min-height: 800px;
+}
+
 .experience-item:not(:first-of-type) {
     margin-top: 18rem;
 }
@@ -81,6 +85,7 @@
 }
 
 .experience-item .line .company {
+    display: block !important;
     color: var(--text-2-400, #d4d7d3);
     font-size: 1.125rem;
     line-height: 1.8rem;

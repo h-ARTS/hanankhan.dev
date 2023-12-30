@@ -2,9 +2,10 @@ import React from "react"
 import Typography from "../components/Typography"
 import "./css/ExperienceItem.css"
 
-const ExperienceItem = ({ className = "", content }) => {
+const ExperienceItem = React.forwardRef(({ className = "", content }, ref) => {
     return (
         <section
+            ref={ref}
             className={`experience-item ${content.className || className}`}
         >
             <div className="circle">
@@ -27,6 +28,6 @@ const ExperienceItem = ({ className = "", content }) => {
             </div>
         </section>
     )
-}
+})
 
 export default ExperienceItem

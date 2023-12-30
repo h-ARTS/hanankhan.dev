@@ -1,13 +1,15 @@
-import React from "react"
+import { useRef } from "react"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
 import ScrollTrigger from "gsap/ScrollTrigger"
+import SplitType from "split-type"
 import Typography from "../components/Typography"
 import Container from "../components/Container"
 import ExperienceItem from "../components/ExperienceItem"
 import "./css/ExperienceSection.css"
 
 const ExperienceSection = () => {
+    const itemRefs = useRef([])
     const experiences = [
         {
             year: 2015,
@@ -49,6 +51,55 @@ const ExperienceSection = () => {
                 "Implemented an energy reporting system in our Mission Control Center, utilizing the Robot Operating System (ROS). Integrated this system seamlessly with NASA's OpenMCT for effective energy monitoring and power controlling. Upgraded the entire control center from Vanilla JavaScript to a Vue3 and TypeScript environment.",
         },
     ]
+
+    gsap.registerPlugin(ScrollTrigger)
+    const right = { x: window.innerWidth - 300 }
+    const left = { x: -100 }
+
+    useGSAP(() => {
+        // const text = new SplitType(desc.current, { types: "chars" })
+        itemRefs.current.forEach((item, index) => {
+            const isRight = Array.from(item.classList).includes("right")
+            const propsCircle = isRight ? right : left
+            const propsContent = isRight
+                ? {
+                      translateX: window.innerWidth - window.innerWidth + 20,
+                  }
+                : { translateX: -10 }
+
+            const tl = gsap
+                .timeline({
+                    scrollTrigger: {
+                        trigger: item,
+                        start: "-=10% center",
+                        end: "70% 70%",
+                        scrub: false,
+                        toggleActions: "play none play reverse",
+                    },
+                })
+                .from(item.querySelector(".circle"), {
+                    scale: 0,
+                    ...propsCircle,
+                    duration: 1,
+                })
+                .from(item.querySelector(".line"), {
+                    height: 0,
+                    duration: 1,
+                    ease: "power3.out",
+                })
+                .from(item.querySelector(".content"), {
+                    ...propsContent,
+                    opacity: 0,
+                })
+        })
+    })
+
+    const addToRefs = (el, refGroup) => {
+        if (el && !refGroup.current.includes(el)) {
+            refGroup.current.push(el)
+        }
+    }
+
     return (
         <Container className="experiences">
             <Typography
@@ -58,7 +109,11 @@ const ExperienceSection = () => {
                 Experiences
             </Typography>
             {experiences.map((content, idx) => (
-                <ExperienceItem content={content} key={idx} />
+                <ExperienceItem
+                    ref={(el) => addToRefs(el, itemRefs)}
+                    content={content}
+                    key={idx}
+                />
             ))}
         </Container>
     )

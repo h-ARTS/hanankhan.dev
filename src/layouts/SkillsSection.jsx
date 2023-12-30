@@ -11,13 +11,16 @@ const SkillsSection = () => {
     const skills =
         "HTML CSS JAVASCRIPT THREEJS VUE REACT JAVA SPRING GSAP UNITY FIGMA TYPESCRIPT"
 
+    const innerHeight = window.innerHeight
+
     useGSAP(() => {
         gsap.timeline({
+            immediateRender: false,
             scrollTrigger: {
                 pin: true,
                 trigger: ".skills",
-                start: "20% 10%",
-                end: `${window.innerHeight + 800}svh center`,
+                start: "90px top",
+                end: () => `${innerHeight * 2}svh center`,
                 scrub: 1,
             },
         })

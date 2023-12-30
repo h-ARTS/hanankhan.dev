@@ -1,6 +1,7 @@
 .typography {
     color: var(--text-2-base);
     font-size: 1.4375rem;
+    hyphens: auto;
 }
 
 .typography.display {
