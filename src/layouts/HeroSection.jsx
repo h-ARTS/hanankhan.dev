@@ -1,5 +1,6 @@
 import { useRef } from "react"
 import { useMediaQuery } from "react-responsive"
+import addToRefs from "../utils/addToRefs"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
 import ScrollTrigger from "gsap/ScrollTrigger"
@@ -86,18 +87,6 @@ const HeroSection = () => {
                 },
             })
         })
-    }
-
-    /**
-     * Damit wir die Elemente ins Refs (siehe oben) speichern können.
-     *
-     * @param {HTMLElement} el line sowie mask element
-     * @param {React.MutableRefObject} refGroup linkRefs und maskRefs
-     */
-    const addToRefs = (el, refGroup) => {
-        if (el && !refGroup.current.includes(el)) {
-            refGroup.current.push(el)
-        }
     }
 
     return (

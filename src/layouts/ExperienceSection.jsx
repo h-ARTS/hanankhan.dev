@@ -1,4 +1,5 @@
 import { useRef } from "react"
+import addToRefs from "../utils/addToRefs"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
 import ScrollTrigger from "gsap/ScrollTrigger"
@@ -56,7 +57,7 @@ const ExperienceSection = () => {
     const left = { x: -100 }
 
     useGSAP(() => {
-        itemRefs.current.forEach((item, index) => {
+        itemRefs.current.forEach((item) => {
             const isRight = Array.from(item.classList).includes("right")
             const propsCircle = isRight ? right : left
             const propsContent = isRight
@@ -93,12 +94,6 @@ const ExperienceSection = () => {
                 })
         })
     })
-
-    const addToRefs = (el, refGroup) => {
-        if (el && !refGroup.current.includes(el)) {
-            refGroup.current.push(el)
-        }
-    }
 
     return (
         <Container className="experiences">
