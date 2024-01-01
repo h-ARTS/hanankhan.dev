@@ -1,5 +1,6 @@
-import { useRef, useReducer } from "react"
+import { useRef } from "react"
 import { useMediaQuery } from "react-responsive"
+import "./css/HeroSection.css"
 import addToRefs from "../utils/addToRefs"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
@@ -8,15 +9,19 @@ import LabelMobile from "../components/LeadLabelMobile"
 import Label from "../components/LeadLabel"
 import GestureHint from "../components/GestureHint"
 import WebGLView from "../components/webgl/WebGLView"
-import { webglReducer, WebGLContext } from "./WebGLContext"
+import { WebGLContext } from "./WebGLContext"
 
 const HeroSection = () => {
     gsap.registerPlugin(ScrollTrigger)
     const isMobile = useMediaQuery({ query: "(max-width: 576px)" })
+    const isTablet = useMediaQuery({
+        query: "(min-width: 768px) and (max-width: 991px)",
+    })
+    const isDesktop = useMediaQuery({ query: "(min-width: 992px)" })
+    const webglRef = useRef()
     const containerRef = useRef()
     const lineRefs = useRef([])
     const maskRefs = useRef([])
-    const [webgl, dispatch] = useReducer(webglReducer)
     const contents = [
         { label: "PINNING", className: "text-base" },
         { label: "TUNNING", className: "text-primary" },
@@ -30,7 +35,28 @@ const HeroSection = () => {
         } else {
             runHeroAnimation(lineRefs, maskRefs)
         }
-    })
+
+        if (isTablet || isDesktop) {
+            gsap.to(".hero-text", { width: "fit-content" }, 0)
+        }
+
+        if (isDesktop) {
+            gsap.fromTo(
+                webglRef.current,
+                {
+                    y: -80,
+                },
+                {
+                    scrollTrigger: {
+                        start: "top",
+                        end: "+=600px",
+                        scrub: true,
+                    },
+                    y: 0,
+                }
+            )
+        }
+    }, [isMobile, isTablet, isDesktop])
 
     const runHeroAnimationMobile = () => {
         const tl = gsap.timeline({
@@ -93,9 +119,9 @@ const HeroSection = () => {
     }
 
     return (
-        <section className="hero container g-0">
-            <div className="row g-0">
-                <div className="col-12 col-sm-6">
+        <section className="hero container-fluid container-lg g-lg-0">
+            <div className="row g-lg-0">
+                <div className="col-12 col-md-6 pt-xl-5">
                     <div className="hero-text">
                         {contents.map((c, idx) =>
                             isMobile ? (
@@ -118,9 +144,12 @@ const HeroSection = () => {
                     </div>
                     {isMobile && <GestureHint />}
                 </div>
-                <div className="col-12 col-sm-6" ref={containerRef}>
+                <div
+                    className="col-12 mt-5 col-sm-9 offset-sm-1 mt-sm-0 col-md-6 offset-md-0 pt-xl-5"
+                    ref={containerRef}
+                >
                     <WebGLContext.Provider value={containerRef}>
-                        <WebGLView />
+                        <WebGLView ref={webglRef} />
                     </WebGLContext.Provider>
                 </div>
             </div>

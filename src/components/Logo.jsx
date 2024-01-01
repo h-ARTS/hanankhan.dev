@@ -3,8 +3,8 @@ import React from "react"
 const Logo = React.forwardRef((_, ref) => {
     return (
         <div ref={ref} className="logo">
-            <p className="logo first">Hanan</p>
-            <p className="logo last">Khan</p>
+            <p className="first">Hanan</p>
+            <p className="last">Khan</p>
         </div>
     )
 })

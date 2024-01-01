@@ -1,9 +1,16 @@
 :root {
     --background-burger: var(--secondary-100);
+    --bs-gutter-x: 2.62rem;
 }
 
 .header {
-    margin: 1.75rem 1.25rem;
+    margin-top: 1.75rem;
+    margin-bottom: 1.75rem;
+    padding: 0 calc(var(--bs-gutter-x) * 0.5);
+}
+
+.header .container-fluid {
+    width: auto;
 }
 
 .overlay {
@@ -11,7 +18,7 @@
     width: 100svw;
     top: 0;
     left: 0;
-    z-index: 0;
+    z-index: -1;
     overflow: hidden;
 }
 
@@ -58,7 +65,7 @@
     position: relative;
     display: block;
     width: 35px;
-    height: 5px;
+    height: 3px;
     border-radius: 10px;
     background-color: var(--background-burger);
     transition: transform 500ms ease-in;
@@ -68,7 +75,7 @@
     position: absolute;
     content: "";
     width: 25px;
-    height: 5px;
+    height: 3px;
     top: 15px;
     right: 0;
     border-radius: 10px;
@@ -84,7 +91,7 @@
     position: absolute;
     content: "";
     width: 15px;
-    height: 5px;
+    height: 3px;
     top: 30px;
     right: 0;
     border-radius: 10px;
@@ -141,4 +148,62 @@
 
 .mobile-menu li a:active {
     opacity: 0.6;
+}
+
+@media (min-width: 576px) {
+    .header {
+        margin-top: 4rem;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        font-size: 1.4375rem;
+        height: 100%;
+        letter-spacing: 0.33063rem;
+    }
+
+    .first {
+        padding-right: 0.5rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .menu ul {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        align-items: center;
+        column-gap: 1.3125rem;
+    }
+
+    .menu li {
+        width: max-content;
+        font-family: Quattrocento Sans;
+        font-size: 1.4375rem;
+        font-weight: 700;
+        line-height: 160%;
+        text-transform: uppercase;
+        letter-spacing: 0.04313rem;
+    }
+
+    .menu li a {
+        color: var(--text-2-700);
+        text-decoration: none;
+        opacity: 0.5;
+        transition: all 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    }
+
+    .menu li a:hover {
+        color: var(--text-2-base);
+    }
+
+    .menu li a:active {
+        color: var(--text-2-600);
+    }
+
+    .menu li a:hover,
+    .menu li a:active {
+        opacity: 1;
+    }
 }

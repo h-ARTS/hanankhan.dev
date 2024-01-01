@@ -1,0 +1,96 @@
+.hero.container-fluid {
+    width: auto;
+    --bs-gutter-x: 2.62rem;
+}
+
+.hero .col {
+    width: 100dvw;
+}
+
+.hero-text {
+    margin: 15svh auto -9.81svh;
+    min-height: 420px;
+}
+
+.hero-text .line,
+.hero-text .rest {
+    position: relative;
+    font-weight: 600;
+    font-size: 3.55rem;
+    line-height: 120%;
+    letter-spacing: 0.0375rem;
+    text-transform: uppercase;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.line {
+    position: relative;
+    text-align: center;
+}
+
+.mask {
+    display: inline-block;
+    transform: translateY(70%);
+}
+
+@media (min-width: 576px) {
+    .hero-text {
+        position: relative;
+        margin-top: 13.44svh;
+    }
+
+    .hero-text .line,
+    .hero-text .rest {
+        display: flex;
+        font-size: 70px;
+        line-height: 1;
+        font-weight: 600;
+        user-select: none;
+    }
+
+    .first-letter {
+        display: inline-block;
+        transform: translateY(-100%); /* Hide the letters initially */
+    }
+
+    .rest span.mask {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: var(--background-base);
+        width: 101%;
+        z-index: 3;
+    }
+
+    .mask {
+        transform: translate(0, 0);
+    }
+}
+
+@media (min-width: 768px) {
+    .hero-text {
+        margin-top: 8svh;
+    }
+}
+
+@media (min-width: 992px) {
+    .hero-text {
+        margin-top: 13.44rem;
+        margin-bottom: 18.75rem;
+        min-height: 500px;
+    }
+
+    .hero-text .line,
+    .hero-text .rest {
+        font-size: 8.125rem;
+    }
+
+    .rest span {
+        position: relative;
+        display: inline-block;
+        z-index: 2;
+    }
+}

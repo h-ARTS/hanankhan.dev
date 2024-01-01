@@ -1,5 +1,5 @@
 .about {
-    margin-top: 9.19rem;
+    margin-top: 1.19rem;
     margin-bottom: 1rem;
 }
 
@@ -12,4 +12,16 @@
     letter-spacing: 0.045rem;
     hyphens: auto;
     margin-top: 3.12rem;
+}
+
+@media (min-width: 576px) {
+    .about {
+        margin-top: 2.12rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .about {
+        margin-top: 4.19rem;
+    }
 }

@@ -1,7 +1,7 @@
 import React from "react"
 
 const MobileNav = React.forwardRef((_, ref) => (
-    <div className="container g-0 mobile-menu">
+    <div className="container-fluid g-0 mobile-menu">
         <nav className="row list">
             <ul className="col-12" ref={ref}>
                 <li>

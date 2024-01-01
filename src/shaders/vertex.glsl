@@ -41,7 +41,7 @@ void main() {
     vec3 displaced = offset;
 	// randomise
     displaced.xy += vec2(random(pindex) - 0.5, random(offset.x + pindex) - 0.5) * uRandom;
-    float rndz = (random(pindex) + snoise2(vec2(pindex * 0.1, uTime * 0.1)));
+    float rndz = (random(pindex) + snoise2(vec2(pindex * 0.1, uTime * 0.12)));
     displaced.z += rndz * (random(pindex) * 2.0 + uDepth);
 	// center
     displaced.xy -= uTextureSize * 0.5;
@@ -49,7 +49,7 @@ void main() {
 	// touch
     float t = texture2D(uTouch, puv).r;
     float oscillation = sin(uTime);
-    displaced.x += t * 20.0 * rndz + (oscillation * 2.);
+    displaced.x -= t * 20.0 * rndz + (oscillation * 2.);
     displaced.y -= t * 4.0 * rndz + (oscillation * 2.);
     displaced.z += t * 20.0 * rndz;
     displaced.x += cos(angle) * t * 20.0 * rndz;

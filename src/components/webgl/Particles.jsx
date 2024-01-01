@@ -52,21 +52,30 @@ function Particles({ sample, discard = true }) {
         }
     }, [])
 
+    const canvasRatio = viewport.width / viewport.height
     useEffect(() => {
         const handleResize = () => {
             if (webgl.current) {
                 const { offsetWidth, offsetHeight } = webgl.current
-                const canvasRatio = viewport.width / viewport.height
                 const textureRatio = texture.image.width / texture.image.height
                 let scale
 
                 if (canvasRatio < textureRatio) {
+                    // console.log("canvas ratio is LESS")
                     gl.setSize(offsetWidth, offsetHeight)
-                    scale = texture.image.width / texture.image.height
+                    scale = (texture.image.width / texture.image.height) * 0.9
                 } else {
-                    gl.setSize(viewport.width, viewport.height)
+                    // console.log("canvas ratio is HIGHER")
+                    gl.setSize(offsetWidth, viewport.height)
                     scale = offsetWidth / texture.image.height
                 }
+
+                // console.log("canvasRatio", canvasRatio)
+                // console.log("textureRatio", textureRatio)
+                // console.log("offsetWidth", offsetWidth)
+                // console.log("offsetHeight", offsetHeight)
+                // console.log("viewport height", viewport.height)
+                // console.log("viewport width", viewport.width)
 
                 if (meshRef.current) {
                     meshRef.current.scale.set(scale, scale, 1)
@@ -193,13 +202,13 @@ function Particles({ sample, discard = true }) {
         gsap.fromTo(
             mesh.material.uniforms.uSize,
             { value: 0.0 },
-            { value: 0.72, duration: 1.0 }
+            { value: 1.1, duration: 1.0 }
         )
-        gsap.to(mesh.material.uniforms.uRandom, { value: 2.5, duration: 1.0 })
+        gsap.to(mesh.material.uniforms.uRandom, { value: 2, duration: 1.0 })
         gsap.fromTo(
             mesh.material.uniforms.uDepth,
-            { value: 90.0 },
-            { value: 4.0, duration: 1.5, ease: "power4.out" }
+            { value: 60.0 },
+            { value: 4.0, duration: 1.5, ease: "power4.inOut" }
         )
     }
 

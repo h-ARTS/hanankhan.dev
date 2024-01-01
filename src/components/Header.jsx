@@ -1,4 +1,5 @@
 import { useRef, useState } from "react"
+import { useMediaQuery } from "react-responsive"
 import "./css/Header.css"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
@@ -9,6 +10,7 @@ import Overlay from "./Overlay"
 const BACKGROUND_400 = "#13141C"
 
 const Header = () => {
+    const isDektop = useMediaQuery({ query: "(min-width: 992px)" })
     const viewport = {
         width: window.innerWidth * window.devicePixelRatio,
         height: window.innerHeight * window.devicePixelRatio,
@@ -28,75 +30,77 @@ const Header = () => {
     const tl = useRef(gsap.timeline({ paused: true }))
 
     useGSAP(() => {
-        const mainTl = gsap.timeline({ paused: true })
+        if (!isDektop) {
+            const mainTl = gsap.timeline({ paused: true })
 
-        mainTl
-            .to(path.current, {
-                duration: 0.5,
-                attr: { d: start },
-                ease: "power1.inOut",
-            })
-            .add(() => {
-                if (mainTl.reversed()) {
-                    burger.current.classList.remove("active")
-                } else {
-                    burger.current.classList.add("active")
-                }
-            }, "<")
-
-            .to("html", { overflow: "hidden" }, "<")
-            .to("body", { overflow: "hidden" }, "<")
-            .to(".overlay", { zIndex: 10 }, "<")
-            .to(
-                path.current,
-                {
-                    duration: 0.8,
-                    attr: { d: end },
+            mainTl
+                .to(path.current, {
+                    duration: 0.5,
+                    attr: { d: start },
                     ease: "power1.inOut",
-                },
-                "+=0.1"
-            )
-            .to(
-                "meta[name='theme-color']",
-                { attr: { content: "#749BFF" } },
-                "-=1.35"
-            )
-            .to(
-                burger.current,
-                {
-                    "--background-burger": BACKGROUND_400,
-                    duration: 0.3,
-                    ease: "power2.in",
-                },
-                "-=1.45"
-            )
-            .to(
-                myLogo.current,
-                {
-                    color: BACKGROUND_400,
-                    duration: 0.3,
-                    ease: "power2.in",
-                },
-                "-=0.8"
-            )
+                })
+                .add(() => {
+                    if (mainTl.reversed()) {
+                        burger.current.classList.remove("active")
+                    } else {
+                        burger.current.classList.add("active")
+                    }
+                }, "<")
 
-        // Separate timeline for staggered menu items
-        const menuTl = gsap.timeline({
-            paused: true,
-            onStart: () => mainTl.play(),
-            onReverseComplete: () => mainTl.reverse().delay(0),
-        })
+                .to("html", { overflow: "hidden" }, "<")
+                .to("body", { overflow: "hidden" }, "<")
+                .to(".overlay", { zIndex: 10 }, "<")
+                .to(
+                    path.current,
+                    {
+                        duration: 0.8,
+                        attr: { d: end },
+                        ease: "power1.inOut",
+                    },
+                    "+=0.1"
+                )
+                .to(
+                    "meta[name='theme-color']",
+                    { attr: { content: "#749BFF" } },
+                    "-=1.35"
+                )
+                .to(
+                    burger.current,
+                    {
+                        "--background-burger": BACKGROUND_400,
+                        duration: 0.3,
+                        ease: "power2.in",
+                    },
+                    "-=1.45"
+                )
+                .to(
+                    myLogo.current,
+                    {
+                        color: BACKGROUND_400,
+                        duration: 0.3,
+                        ease: "power2.in",
+                    },
+                    "-=0.8"
+                )
 
-        menuTl.to(menuRef.current.children, {
-            delay: 0.8,
-            duration: 0.8,
-            y: 50,
-            autoAlpha: 1,
-            stagger: 0.2,
-            ease: "power1.out",
-        })
+            // Separate timeline for staggered menu items
+            const menuTl = gsap.timeline({
+                paused: true,
+                onStart: () => mainTl.play(),
+                onReverseComplete: () => mainTl.reverse().delay(0),
+            })
 
-        tl.current = { main: mainTl, menu: menuTl }
+            menuTl.to(menuRef.current.children, {
+                delay: 0.8,
+                duration: 0.8,
+                y: 50,
+                autoAlpha: 1,
+                stagger: 0.2,
+                ease: "power1.out",
+            })
+
+            tl.current = { main: mainTl, menu: menuTl }
+        }
     })
 
     const toggleMenu = (e) => {
@@ -116,18 +120,39 @@ const Header = () => {
     return (
         <>
             <header className="header">
-                <div className="container-sm g-0">
+                <div className="container-fluid container-lg g-0">
                     <div className="row">
                         <div className="col-6">
                             <Logo ref={myLogo} />
                         </div>
                         <div className="col-6">
-                            <BurgerMenu onClick={toggleMenu} ref={burger} />
+                            {isDektop ? (
+                                <nav className="menu">
+                                    <ul>
+                                        <li>
+                                            <a href="#">About</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Work</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">My Journey</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Contact</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            ) : (
+                                <BurgerMenu onClick={toggleMenu} ref={burger} />
+                            )}
                         </div>
                     </div>
                 </div>
             </header>
-            <Overlay pathRef={path} menuRef={menuRef} viewport={viewport} />
+            {!isDektop && (
+                <Overlay pathRef={path} menuRef={menuRef} viewport={viewport} />
+            )}
         </>
     )
 }
