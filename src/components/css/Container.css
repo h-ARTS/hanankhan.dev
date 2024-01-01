@@ -1,9 +1,4 @@
-.page {
+.container-fluid,
+.container-lg {
     overflow: hidden;
-}
-
-.page.container {
-    width: unset;
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
 }

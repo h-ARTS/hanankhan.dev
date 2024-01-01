@@ -36,6 +36,7 @@
     letter-spacing: 3.91px;
     text-transform: uppercase;
     z-index: 11;
+    user-select: none;
 }
 
 .logo .first {

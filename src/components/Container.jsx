@@ -3,7 +3,7 @@ import "./css/Container.css"
 
 const Container = ({ className, children }) => {
     return (
-        <section className={`${className} page container g-0`}>
+        <section className={`${className} container-fluid container-lg g-lg-0`}>
             {children}
         </section>
     )
