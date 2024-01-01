@@ -7,6 +7,7 @@ import ScrollTrigger from "gsap/ScrollTrigger"
 import LabelMobile from "../components/LeadLabelMobile"
 import Label from "../components/LeadLabel"
 import GestureHint from "../components/GestureHint"
+import WebGLView from "../components/webgl/WebGLView"
 
 const HeroSection = () => {
     gsap.registerPlugin(ScrollTrigger)
@@ -68,7 +69,6 @@ const HeroSection = () => {
                  * den completedS hoch.
                  */
                 onComplete: () => {
-                    console.log("completed")
                     completedS++
                     if (completedS === totalS) {
                         /**
@@ -114,6 +114,9 @@ const HeroSection = () => {
                         )}
                     </div>
                     <GestureHint />
+                </div>
+                <div className="col">
+                    <WebGLView></WebGLView>
                 </div>
             </div>
         </section>
