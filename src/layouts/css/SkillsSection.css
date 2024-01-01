@@ -1,0 +1,71 @@
+.page.skills {
+    margin-top: -9rem;
+    margin-bottom: -2rem;
+}
+
+.skills .inner {
+    display: flex;
+    width: fit-content;
+    flex: auto;
+}
+
+.skills .inner .label {
+    color: var(--secondary-100, #d6e1ff);
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    padding: 0 calc(1.87rem / 2);
+}
+
+.marquee {
+    overflow: hidden;
+    font-weight: 600;
+    font-size: 34px;
+    text-transform: uppercase;
+    padding-top: 10rem;
+    padding-bottom: 6rem;
+}
+
+.marquee-inner {
+    display: flex;
+}
+
+.marquee-line {
+    font-size: 4.75rem;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 10px 10px;
+    min-width: 100%;
+    white-space: nowrap;
+    color: var(--secondary-100, #d6e1ff);
+    opacity: 0.2;
+    animation-name: marqueeLine;
+    animation-duration: 45s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.marquee-inner.reverse .marquee-line {
+    animation-name: marqueeLineReversed;
+    transform: translateX(-100%);
+}
+
+@keyframes marqueeLine {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes marqueeLineReversed {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+}

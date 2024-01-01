@@ -1,0 +1,27 @@
+.about {
+    margin-top: 1.19rem;
+    margin-bottom: 1rem;
+}
+
+.about p {
+    color: var(--text-2-base);
+    font-family: "Jost", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 160%;
+    letter-spacing: 0.045rem;
+    hyphens: auto;
+    margin-top: 3.12rem;
+}
+
+@media (min-width: 576px) {
+    .about {
+        margin-top: 2.12rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .about {
+        margin-top: 4.19rem;
+    }
+}

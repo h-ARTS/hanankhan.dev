@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Jost:wght@600");
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quattrocento+Sans:wght@400;700&display=swap");
 
 :root {
     color-scheme: light dark;
@@ -10,80 +11,57 @@
 
     --background-100: #323548;
     --background-200: #262736;
-    --background-300: #1A1C25;
-    --background-400: #13141C;
+    --background-300: #1a1c25;
+    --background-400: #13141c;
     --background-base: #0e0f17;
-    --background-600: #0B0C13;
+    --background-600: #0b0c13;
     --background-700: #080910;
-    --text-1-100: #F5F6F4;
-    --text-1-200: #E9EBE8;
-    --text-1-base: #DEE0D6;
-    --text-1-400: #D3D5C4;
-    --text-1-500: #C8CAB2;
-    --text-1-600: #BDC0A0;
-    --text-1-700: #B2B58E;
-    --text-1-100: #F7F8F6;
-    --text-1-200: #EBEDEA;
-    --text-1-300: #E0E2DF;
-    --text-1-400: #D4D7D3;
-    --text-2-base: #E2E5DB;
-    --text-1-600: #C9CCBE;
-    --text-1-700: #BDBFAC;
+    --text-1-100: #f5f6f4;
+    --text-1-200: #e9ebe8;
+    --text-1-base: #dee0d6;
+    --text-1-400: #d3d5c4;
+    --text-1-500: #c8cab2;
+    --text-1-600: #bdc0a0;
+    --text-1-700: #b2b58e;
+    --text-2-100: #f7f8f6;
+    --text-2-200: #ebedea;
+    --text-2-300: #e0e2df;
+    --text-2-400: #d4d7d3;
+    --text-2-base: #e2e5db;
+    --text-2-600: #c9ccbe;
+    --text-2-700: #bdbfac;
     --primary-base: #749bff;
-    --primary-1-500: #6288DB;
-    --primary-1-600: #4F74B8;
-    --primary-1-700: #3C6194;
-    --secondary-1-100: #D6E1FF;
-    --secondary-1-200: #B9C7FF;
-    --secondary-1-300: #9CADE5;
+    --primary-500: #6288db;
+    --primary-600: #4f74b8;
+    --primary-700: #3c6194;
+    --secondary-100: #d6e1ff;
+    --secondary-200: #b9c7ff;
+    --secondary-300: #9cade5;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
 body {
     font-family: "Jost", sans-serif;
     background-color: var(--background-base);
     line-height: 1;
+    overflow-x: hidden;
 }
 
-header {
-    padding: 20px;
-    margin: 0 auto;
-    width: fit-content;
+a {
+    color: var(--secondary-300);
 }
 
-.line {
-    display: flex;
-    overflow: hidden;
-    white-space: nowrap;
-    font-size: 130px;
-    user-select: none;
+a:hover {
+    color: var(--secondary-100);
 }
 
-.first-letter {
-    display: inline-block;
-    transform: translateY(-100%); /* Hide the letters initially */
-}
-
-.rest {
-    position: relative;
-    overflow: hidden;
-    white-space: nowrap;
-}
-
-.rest span.mask {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: var(--background-base);
-    width: 100%;
-    z-index: 3;
-}
-
-.rest span {
-    position: relative;
-    display: inline-block;
-    z-index: 2;
+a:active {
+    color: var(--primary-base);
 }
 
 .text-base {
@@ -92,4 +70,8 @@ header {
 
 .text-primary {
     color: var(--primary-base);
+}
+
+.text-right {
+    text-align: right;
 }

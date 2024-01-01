@@ -1,0 +1,101 @@
+.experience-item {
+    min-height: 800px;
+}
+
+.experience-item:not(:first-of-type) {
+    margin-top: 18rem;
+}
+
+.experience-item .circle {
+    position: relative;
+    width: 19.5625rem;
+    height: 19.5625rem;
+    background: var(--background-100, #323548);
+    border-radius: 19.5625rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: -3.25rem;
+}
+
+.experience-item.lg .circle {
+    width: 21.3125rem;
+    height: 21.3125rem;
+    left: -3.89rem;
+}
+
+.experience-item.right .circle {
+    left: unset;
+    right: -4.56rem;
+}
+
+.experience-item.right.lg .circle {
+    right: -4.06rem;
+}
+
+.experience-item.height-1 .line {
+    height: 22.125rem;
+}
+
+.experience-item.height-2 .line {
+    height: 25.125rem;
+}
+
+.experience-item.height-3 .line {
+    height: 29.125rem;
+}
+
+.experiences-item .year {
+    color: var(--text-2-700, #bdbfac);
+}
+
+.experience-item.right .line {
+    text-align: right;
+    border-left: none;
+    border-right: 0.125rem solid var(--text-1-600);
+}
+
+.experience-item .year h1 {
+    font-size: 5.25rem;
+    letter-spacing: 0.1575rem;
+}
+
+.experience-item .line {
+    position: relative;
+    text-align: left;
+    top: -5.25rem;
+    height: 20.125rem;
+    border-left: 0.125rem solid var(--text-1-600);
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.experience-item .line .content {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    margin: 0 1.06rem;
+}
+
+.experience-item .line h3 {
+    color: var(--primary-500, #6288db);
+    font-size: 1.75rem;
+    letter-spacing: 0.0525rem;
+    line-height: 2.8rem;
+}
+
+.experience-item .line .company {
+    display: block !important;
+    color: var(--text-2-400, #d4d7d3);
+    font-size: 1.125rem;
+    line-height: 1.8rem;
+    letter-spacing: 0.03375rem;
+}
+
+.experience-item .description {
+    color: var(--text-2-700, #bdbfac);
+    font-size: 1.125rem;
+
+    line-height: 1.8rem;
+    letter-spacing: 0.03375rem;
+}
