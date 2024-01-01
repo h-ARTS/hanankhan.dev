@@ -65,15 +65,13 @@
         z-index: 3;
     }
 
-    .mask {
-        transform: translate(0, 0);
-    }
-}
-
-@media (min-width: 576px) {
     .hero-text .rest span {
         overflow: hidden;
         width: 0%;
+    }
+
+    .mask {
+        transform: translate(0, 0);
     }
 }
 
