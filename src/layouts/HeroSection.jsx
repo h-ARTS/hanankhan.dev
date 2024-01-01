@@ -108,7 +108,7 @@ const HeroSection = () => {
                         maskRefs.current.forEach((m) => {
                             gsap.to(m, {
                                 duration: 1.25,
-                                translateX: "100%",
+                                width: "100%",
                                 ease: "power4.inOut",
                             })
                         })

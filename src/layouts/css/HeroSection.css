@@ -24,6 +24,11 @@
     white-space: nowrap;
 }
 
+.hero-text .rest span {
+    overflow: hidden;
+    width: 0%;
+}
+
 .line {
     position: relative;
     text-align: center;
@@ -85,12 +90,19 @@
 
     .hero-text .line,
     .hero-text .rest {
-        font-size: 8.125rem;
+        font-size: 6.125rem;
     }
 
     .rest span {
         position: relative;
         display: inline-block;
         z-index: 2;
+    }
+}
+
+@media (min-width: 1200px) {
+    .hero-text .line,
+    .hero-text .rest {
+        font-size: 8.125rem;
     }
 }

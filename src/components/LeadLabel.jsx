@@ -8,11 +8,9 @@ const Label = ({ content, lineRefs, maskRefs, addToRefs }) => {
         >
             <span className="first-letter">S</span>
             <span className="rest">
-                <span
-                    ref={(el) => addToRefs(el, maskRefs)}
-                    className="mask"
-                ></span>
-                <span>{content.label}</span>
+                <span ref={(el) => addToRefs(el, maskRefs)}>
+                    {content.label}
+                </span>
             </span>
         </div>
     )
