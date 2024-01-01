@@ -9,9 +9,16 @@ import Overlay from "./Overlay"
 const BACKGROUND_400 = "#13141C"
 
 const Header = () => {
-    const start = "M0 0H1170V2532C780 1688 1171 75 214 75-164 69-202 97-202 0Z"
-    const end =
-        "M0 0H1170V2532C-1949 2503-1937 2512-887 447-876 63-796 5-313 0Z"
+    const viewport = {
+        width: window.innerWidth * window.devicePixelRatio,
+        height: window.innerHeight * window.devicePixelRatio,
+    }
+    const start = `M0 0H${viewport.width}V${viewport.height}C780 1688 ${viewport.width} 75 214 75-164 69-202 97-202 0Z`
+    const end = `M0 0H${viewport.width}V${viewport.height}C-1949 ${
+        viewport.height
+    }-1937 ${viewport.height - 20}-887 447-876 63-796 5-313 0Z`
+
+    // 2532-2503 = 29
     const path = useRef(null)
     const burger = useRef(null)
     const myLogo = useRef(null)
@@ -37,6 +44,7 @@ const Header = () => {
                 }
             }, "<")
 
+            .to("html", { overflow: "hidden" }, "<")
             .to("body", { overflow: "hidden" }, "<")
             .to(".overlay", { zIndex: 10 }, "<")
             .to(
@@ -119,7 +127,7 @@ const Header = () => {
                     </div>
                 </div>
             </header>
-            <Overlay pathRef={path} menuRef={menuRef} />
+            <Overlay pathRef={path} menuRef={menuRef} viewport={viewport} />
         </>
     )
 }

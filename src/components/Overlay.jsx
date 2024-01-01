@@ -1,10 +1,12 @@
 import MobileNav from "./MobileNav"
 
-const Overlay = ({ pathRef, menuRef }) => {
-    const viewBox = `0 0 ${window.innerWidth * window.devicePixelRatio} ${
-        window.innerHeight * window.devicePixelRatio
-    }`
-    const d = "M1170 1H1170V2532C1170 2503 1170 0 1170 0 1170 0 1170 0 1170 0Z"
+const Overlay = ({ pathRef, menuRef, viewport }) => {
+    const viewportWidth = viewport.width
+    const viewportHeight = viewport.height
+    const viewBox = `0 0 ${viewportWidth} ${viewportHeight}`
+    const d = `M${viewportWidth} 1H${viewportWidth}V${viewportHeight}C${viewportWidth} ${
+        viewportHeight - 29
+    } ${viewportWidth} 0 ${viewportWidth} 0 ${viewportWidth} 0 ${viewportWidth} 0 ${viewportWidth} 0Z`
 
     return (
         <div className="overlay">

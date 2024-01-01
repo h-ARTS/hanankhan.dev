@@ -95,7 +95,7 @@ const HeroSection = () => {
     return (
         <section className="hero container g-0">
             <div className="row g-0">
-                <div className="col">
+                <div className="col-12 col-sm-6">
                     <div className="hero-text">
                         {contents.map((c, idx) =>
                             isMobile ? (
@@ -118,7 +118,7 @@ const HeroSection = () => {
                     </div>
                     {isMobile && <GestureHint />}
                 </div>
-                <div className="col" ref={containerRef}>
+                <div className="col-12 col-sm-6" ref={containerRef}>
                     <WebGLContext.Provider value={containerRef}>
                         <WebGLView />
                     </WebGLContext.Provider>
