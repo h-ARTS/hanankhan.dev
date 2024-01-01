@@ -24,11 +24,6 @@
     white-space: nowrap;
 }
 
-.hero-text .rest span {
-    overflow: hidden;
-    width: 0%;
-}
-
 .line {
     position: relative;
     text-align: center;
@@ -72,6 +67,13 @@
 
     .mask {
         transform: translate(0, 0);
+    }
+}
+
+@media (min-width: 576px) {
+    .hero-text .rest span {
+        overflow: hidden;
+        width: 0%;
     }
 }
 
