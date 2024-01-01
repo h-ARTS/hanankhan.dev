@@ -1,4 +1,4 @@
-import { useRef } from "react"
+import { useRef, useReducer } from "react"
 import { useMediaQuery } from "react-responsive"
 import addToRefs from "../utils/addToRefs"
 import gsap from "gsap"
@@ -8,12 +8,15 @@ import LabelMobile from "../components/LeadLabelMobile"
 import Label from "../components/LeadLabel"
 import GestureHint from "../components/GestureHint"
 import WebGLView from "../components/webgl/WebGLView"
+import { webglReducer, WebGLContext } from "./WebGLContext"
 
 const HeroSection = () => {
     gsap.registerPlugin(ScrollTrigger)
     const isMobile = useMediaQuery({ query: "(max-width: 576px)" })
+    const containerRef = useRef()
     const lineRefs = useRef([])
     const maskRefs = useRef([])
+    const [webgl, dispatch] = useReducer(webglReducer)
     const contents = [
         { label: "PINNING", className: "text-base" },
         { label: "TUNNING", className: "text-primary" },
@@ -113,10 +116,12 @@ const HeroSection = () => {
                             )
                         )}
                     </div>
-                    <GestureHint />
+                    {isMobile && <GestureHint />}
                 </div>
-                <div className="col">
-                    <WebGLView></WebGLView>
+                <div className="col" ref={containerRef}>
+                    <WebGLContext.Provider value={containerRef}>
+                        <WebGLView />
+                    </WebGLContext.Provider>
                 </div>
             </div>
         </section>
