@@ -1,4 +1,5 @@
 import { useRef } from "react"
+import { useMediaQuery } from "react-responsive"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
 import ScrollTrigger from "gsap/ScrollTrigger"
@@ -8,6 +9,9 @@ import Container from "../components/Container"
 import "./css/AboutSection.css"
 
 const AboutSection = () => {
+    const isTablet = useMediaQuery({
+        query: "(min-width: 768px)",
+    })
     const reveal = useRef([])
     gsap.registerPlugin(ScrollTrigger)
 
@@ -32,7 +36,9 @@ const AboutSection = () => {
                 <div className="col">
                     <Typography
                         tag="h3"
-                        className="text upper normal spread bold"
+                        className={`text upper ${
+                            isTablet ? "lead" : "normal"
+                        } spread bold`}
                     >
                         ABOUT ME
                     </Typography>
