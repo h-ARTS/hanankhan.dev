@@ -145,7 +145,7 @@ const HeroSection = () => {
                     {isMobile && <GestureHint />}
                 </div>
                 <div
-                    className="col-12 mt-5 col-sm-9 offset-sm-1 mt-sm-0 col-md-6 offset-md-0 pt-xl-5"
+                    className="col-12 mt-5 col-sm-8 offset-sm-2 mt-sm-0 col-md-6 offset-md-0 pt-xl-5"
                     ref={containerRef}
                 >
                     <WebGLContext.Provider value={containerRef}>
