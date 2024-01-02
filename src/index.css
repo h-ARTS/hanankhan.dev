@@ -56,6 +56,12 @@ body {
     overflow-x: hidden;
 }
 
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 a {
     color: var(--secondary-300);
 }
