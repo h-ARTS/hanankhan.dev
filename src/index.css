@@ -60,12 +60,17 @@ a {
     color: var(--secondary-300);
 }
 
-a:hover {
+a:hover,
+a:focus-visible {
     color: var(--secondary-100);
 }
 
 a:active {
     color: var(--primary-base);
+}
+
+a:focus-visible {
+    outline: 0;
 }
 
 .text-base {

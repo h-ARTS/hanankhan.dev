@@ -204,7 +204,13 @@
     }
 
     .menu li a:hover,
-    .menu li a:active {
+    .menu li a:active,
+    .menu li a:focus-visible {
         opacity: 1;
+    }
+
+    .menu li a:focus-visible {
+        outline: 0;
+        color: var(--text-2-base);
     }
 }
