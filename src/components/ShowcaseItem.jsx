@@ -1,9 +1,9 @@
 import React from "react"
 import Typography from "./Typography"
 
-const ShowcaseItem = ({ item }) => {
+const ShowcaseItem = React.forwardRef(({ item }, ref) => {
     return (
-        <div className={`showcase-item ${item.className || ""}`}>
+        <div ref={ref} className={`showcase-item ${item.className || ""}`}>
             <img src={item.img} alt="Viboo - Mobile UI Design" />
             <Typography tag="h3" className="display text-primary">
                 {item.title}
@@ -13,6 +13,6 @@ const ShowcaseItem = ({ item }) => {
             </Typography>
         </div>
     )
-}
+})
 
 export default ShowcaseItem
