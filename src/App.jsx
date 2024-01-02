@@ -9,6 +9,7 @@ import Contact from "./layouts/Contact"
 
 function App({ lenis }) {
     window.lenis = lenis
+
     return (
         <>
             <Header />

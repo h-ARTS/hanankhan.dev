@@ -1,6 +1,10 @@
+.webgl {
+    min-height: 430px;
+}
+
 .hero.container-fluid {
-    width: auto;
     --bs-gutter-x: 2.62rem;
+    width: auto;
 }
 
 .hero .col {
