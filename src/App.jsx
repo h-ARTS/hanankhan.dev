@@ -13,12 +13,14 @@ function App({ lenis }) {
     return (
         <>
             <Header />
-            <HeroSection />
-            <AboutSection />
-            <ProjectShowcaseSection />
-            <ExperienceSection />
-            <SkillsSection />
-            <Contact />
+            <main>
+                <HeroSection />
+                <AboutSection />
+                <ProjectShowcaseSection />
+                <ExperienceSection />
+                <SkillsSection />
+                <Contact />
+            </main>
         </>
     )
 }

@@ -3,7 +3,12 @@
 }
 
 .experience-item:not(:first-of-type) {
-    margin-top: 18rem;
+    margin-top: 1rem;
+}
+
+.experience-item .quote {
+    display: none;
+    quotes: "«" "»";
 }
 
 .experience-item .circle {
@@ -26,11 +31,11 @@
 
 .experience-item.right .circle {
     left: unset;
-    right: -4.56rem;
+    right: calc(18.76rem - 100svw);
 }
 
 .experience-item.right.lg .circle {
-    right: -4.06rem;
+    right: calc(20rem - 100svw);
 }
 
 .experience-item.height-1 .line {
@@ -47,12 +52,6 @@
 
 .experiences-item .year {
     color: var(--text-2-700, #bdbfac);
-}
-
-.experience-item.right .line {
-    text-align: right;
-    border-left: none;
-    border-right: 0.125rem solid var(--text-1-600);
 }
 
 .experience-item .year h1 {
@@ -92,10 +91,66 @@
     letter-spacing: 0.03375rem;
 }
 
+.experience-item.right .line {
+    text-align: right;
+    border-left: none;
+    border-right: 0.125rem solid var(--text-1-600);
+}
+
 .experience-item .description {
     color: var(--text-2-700, #bdbfac);
     font-size: 1.125rem;
 
     line-height: 1.8rem;
     letter-spacing: 0.03375rem;
+}
+
+@media (min-width: 768px) {
+    .experience-item .line {
+        left: calc((19.5625rem) / 3);
+        width: 21.6875rem;
+    }
+
+    .experience-item.right.horizontal {
+        position: relative;
+    }
+
+    .experience-item.right.horizontal .line {
+        position: absolute;
+        border-right: 0;
+        border-bottom: 0.125rem solid var(--text-1-600);
+        width: 32.5rem;
+        left: unset;
+        right: 6.88rem;
+        top: 4.37rem;
+        height: unset;
+        padding-bottom: 1.87rem;
+        flex-direction: column;
+    }
+
+    .experience-item.right.horizontal .line .content {
+        width: 20rem;
+        right: 2.3rem;
+    }
+
+    .experience-item .quote {
+        position: absolute;
+        font-family: "Quattrocento Sans", sans-serif;
+        font-size: 1.4375rem;
+        font-weight: 400;
+        line-height: 160%;
+        letter-spacing: 0.48875rem;
+        display: block;
+        top: calc(21.3125rem / 1.7);
+        width: 20rem;
+        left: 19.25rem;
+        color: var(--text-2-600, #c9ccbe);
+    }
+
+    .experience-item.right.horizontal .quote {
+        left: unset;
+        right: 20rem;
+        text-align: right;
+        top: 18rem;
+    }
 }

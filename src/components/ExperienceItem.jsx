@@ -13,6 +13,7 @@ const ExperienceItem = React.forwardRef(({ className = "", content }, ref) => {
                     <Typography tag="h1">{content.year}</Typography>
                 </div>
             </div>
+            <q className="quote">{content.quote}</q>
             <div className="line">
                 <div className="content">
                     <Typography tag="h3" className="display bold">
