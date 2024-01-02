@@ -1,8 +1,11 @@
 import React, { useRef } from "react"
 import { useMediaQuery } from "react-responsive"
 import vibooImage from "../assets/viboo_concept_1.png"
+import vibooImageBig from "../assets/viboo_concept_big.png"
 import nomos from "../assets/Nomos_Home_1.png"
+import nomosBig from "../assets/Nomos_Home_Big.png"
 import digi from "../assets/digidev_1.png"
+import digiBig from "../assets/digiweb_big.png"
 import "./css/ProjectShowcases.css"
 import Container from "../components/Container"
 import Typography from "../components/Typography"
@@ -18,14 +21,14 @@ const ProjectShowcaseSection = () => {
     const isTablet = useMediaQuery({ query: "(min-width: 768px)" })
     const items = [
         {
-            img: vibooImage,
+            img: isTablet ? vibooImageBig : vibooImage,
             title: "Viboo",
             caption: "Mobile design",
             className: "",
             colClasses: "col-12 col-sm-10 col-md-6",
         },
         {
-            img: nomos,
+            img: isTablet ? nomosBig : nomos,
             title: "Nomos Home",
             caption: "Mobile app development",
             className: "text-right right",
@@ -33,7 +36,7 @@ const ProjectShowcaseSection = () => {
                 "col-12 mt-5 col-sm-10 offset-sm-2 col-md-6 offset-md-6",
         },
         {
-            img: digi,
+            img: isTablet ? digiBig : digi,
             title: "Digicomp Academy AG",
             caption: "Web Engineering",
             colClasses: "col-12 mt-5 col-sm-10 col-md-6",
