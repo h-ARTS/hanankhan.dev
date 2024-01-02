@@ -117,6 +117,10 @@ const Header = () => {
         })
     }
 
+    const handleClick = (e) => {
+        lenis.scrollTo(e.target.hash)
+    }
+
     return (
         <>
             <header className="header">
@@ -130,16 +134,36 @@ const Header = () => {
                                 <nav className="menu">
                                     <ul>
                                         <li>
-                                            <a href="#">About</a>
+                                            <a
+                                                href="#about"
+                                                onClick={handleClick}
+                                            >
+                                                About
+                                            </a>
                                         </li>
                                         <li>
-                                            <a href="#">Work</a>
+                                            <a
+                                                href="#projects"
+                                                onClick={handleClick}
+                                            >
+                                                Work
+                                            </a>
                                         </li>
                                         <li>
-                                            <a href="#">My Journey</a>
+                                            <a
+                                                href="#experiences"
+                                                onClick={handleClick}
+                                            >
+                                                My Journey
+                                            </a>
                                         </li>
                                         <li>
-                                            <a href="#">Contact</a>
+                                            <a
+                                                href="#contact"
+                                                onClick={handleClick}
+                                            >
+                                                Contact
+                                            </a>
                                         </li>
                                     </ul>
                                 </nav>
@@ -151,7 +175,12 @@ const Header = () => {
                 </div>
             </header>
             {!isDektop && (
-                <Overlay pathRef={path} menuRef={menuRef} viewport={viewport} />
+                <Overlay
+                    pathRef={path}
+                    menuRef={menuRef}
+                    viewport={viewport}
+                    toggleMenu={toggleMenu}
+                />
             )}
         </>
     )

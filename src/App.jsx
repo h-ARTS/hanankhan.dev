@@ -8,6 +8,7 @@ import SkillsSection from "./layouts/SkillsSection"
 import Contact from "./layouts/Contact"
 
 function App({ lenis }) {
+    window.lenis = lenis
     return (
         <>
             <Header />

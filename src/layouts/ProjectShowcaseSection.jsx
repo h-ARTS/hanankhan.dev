@@ -15,9 +15,7 @@ import addToRefs from "../utils/addToRefs"
 const ProjectShowcaseSection = () => {
     gsap.registerPlugin(ScrollTrigger)
     const showcaseItemsRef = useRef([])
-    const isTablet = useMediaQuery({
-        query: "(min-width: 768px)",
-    })
+    const isTablet = useMediaQuery({ query: "(min-width: 768px)" })
     const items = [
         {
             img: vibooImage,
@@ -40,7 +38,6 @@ const ProjectShowcaseSection = () => {
             colClasses: "col mt-5 col-sm-10 col-md-6",
         },
     ]
-    const tl = gsap.timeline({ paused: true })
 
     useGSAP(() => {
         showcaseItemsRef.current.forEach((project) => {
@@ -66,7 +63,7 @@ const ProjectShowcaseSection = () => {
                 {
                     scrollTrigger: {
                         trigger: project,
-                        start: "center center",
+                        start: "41% center",
                         markers: true,
                         toggleActions: "play none none reverse",
                     },
@@ -81,7 +78,7 @@ const ProjectShowcaseSection = () => {
     }, [isTablet])
 
     return (
-        <Container className="project-showcases">
+        <Container id="projects" className="project-showcases">
             <Typography
                 tag="h3"
                 className={`text ${

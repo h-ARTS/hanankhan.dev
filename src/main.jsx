@@ -4,6 +4,8 @@ import App from "./App.jsx"
 import Lenis from "@studio-freight/lenis"
 import "bootstrap/dist/css/bootstrap-grid.min.css"
 import "./index.css"
+import gsap from "gsap"
+import ScrollTrigger from "gsap/ScrollTrigger"
 
 const lenis = new Lenis({
     duration: 1.2,
@@ -16,6 +18,14 @@ const lenis = new Lenis({
     touchMultiplier: 2,
     infinite: false,
 })
+
+lenis.on("scroll", ScrollTrigger.update)
+
+gsap.ticker.add((time) => {
+    lenis.raf(time * 1000)
+})
+
+gsap.ticker.lagSmoothing(0)
 
 function raf(time) {
     lenis.raf(time)

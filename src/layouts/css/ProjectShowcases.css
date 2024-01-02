@@ -17,10 +17,17 @@
 .showcase-item {
     --clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
     --clip-path-right: polygon(0 0, 100% 0, 100% 0, 0 0);
+    text-align: left;
     margin-top: 3.13rem;
     clip-path: var(--clip-path);
 }
 
 .showcase-item.right {
     clip-path: var(--clip-path-right);
+}
+
+@media (min-width: 992px) {
+    .project-showcases {
+        text-align: center;
+    }
 }

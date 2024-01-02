@@ -31,7 +31,7 @@ const AboutSection = () => {
     })
 
     return (
-        <Container className="about">
+        <Container id="about" className="about">
             <div className="row g-0">
                 <div className="col">
                     <Typography

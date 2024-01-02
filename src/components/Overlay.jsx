@@ -1,6 +1,6 @@
 import MobileNav from "./MobileNav"
 
-const Overlay = ({ pathRef, menuRef, viewport }) => {
+const Overlay = ({ pathRef, menuRef, viewport, toggleMenu }) => {
     const viewportWidth = viewport.width
     const viewportHeight = viewport.height
     const viewBox = `0 0 ${viewportWidth} ${viewportHeight}`
@@ -10,7 +10,7 @@ const Overlay = ({ pathRef, menuRef, viewport }) => {
 
     return (
         <div className="overlay">
-            <MobileNav ref={menuRef} />
+            <MobileNav ref={menuRef} toggleMenu={toggleMenu} />
             <svg viewBox={viewBox} preserveAspectRatio="xMidYMid meet">
                 <path ref={pathRef} d={d}></path>
             </svg>

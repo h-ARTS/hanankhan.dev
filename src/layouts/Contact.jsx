@@ -5,7 +5,7 @@ import "./css/Contact.css"
 
 const Contact = () => {
     return (
-        <Container className="contact">
+        <Container id="contact" className="contact">
             <Typography tag="h3" className="text upper normal spread bold">
                 Let's connect
             </Typography>

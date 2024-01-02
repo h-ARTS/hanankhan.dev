@@ -96,7 +96,7 @@ const ExperienceSection = () => {
     })
 
     return (
-        <Container className="experiences">
+        <Container id="experiences" className="experiences">
             <Typography
                 tag="h3"
                 className="text upper normal spread bold title"

@@ -1,9 +1,10 @@
 import React from "react"
 import "./css/Container.css"
 
-const Container = ({ className, children }) => {
+const Container = ({ id, className, children }) => {
     return (
         <section
+            id={id}
             className={`${className} layout container-fluid container-lg g-lg-0`}
         >
             {children}
