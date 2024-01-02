@@ -1,5 +1,6 @@
 .project-showcases {
     margin-top: 9.31rem;
+    min-height: 410px;
 }
 
 .project-showcases h3.display {
@@ -22,6 +23,11 @@
     clip-path: var(--clip-path);
 }
 
+.showcase-item img {
+    aspect-ratio: 9 / 12;
+    overflow: hidden;
+}
+
 .showcase-item.right {
     clip-path: var(--clip-path-right);
 }
@@ -29,5 +35,9 @@
 @media (min-width: 992px) {
     .project-showcases {
         text-align: center;
+    }
+
+    .showcase-item img {
+        aspect-ratio: unset;
     }
 }
