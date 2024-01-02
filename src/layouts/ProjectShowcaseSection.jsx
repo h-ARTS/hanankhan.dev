@@ -22,20 +22,21 @@ const ProjectShowcaseSection = () => {
             title: "Viboo",
             caption: "Mobile design",
             className: "",
-            colClasses: "col col-sm-10 col-md-6",
+            colClasses: "col-12 col-sm-10 col-md-6",
         },
         {
             img: nomos,
             title: "Nomos Home",
             caption: "Mobile app development",
             className: "text-right right",
-            colClasses: "col mt-5 col-sm-10 offset-sm-2 col-md-6 offset-md-6",
+            colClasses:
+                "col-12 mt-5 col-sm-10 offset-sm-2 col-md-6 offset-md-6",
         },
         {
             img: digi,
             title: "Digicomp Academy AG",
             caption: "Web Engineering",
-            colClasses: "col mt-5 col-sm-10 col-md-6",
+            colClasses: "col-12 mt-5 col-sm-10 col-md-6",
         },
     ]
 
@@ -64,7 +65,6 @@ const ProjectShowcaseSection = () => {
                     scrollTrigger: {
                         trigger: project,
                         start: "41% center",
-                        markers: true,
                         toggleActions: "play none none reverse",
                     },
                     duration: 1,
