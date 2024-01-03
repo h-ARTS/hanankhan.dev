@@ -99,7 +99,6 @@ const ExperienceSection = () => {
                         trigger: item,
                         start,
                         pin: !isTablet,
-                        markers: true,
                         scrub: false,
                         toggleActions: "play none play reverse",
                     },
