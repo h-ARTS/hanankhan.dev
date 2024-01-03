@@ -4,9 +4,9 @@ $text_2_700: var(--text-2-700, #bdbfac);
 $primary_500: var(--primary-500, #6288db);
 $font-family: "Quattrocento Sans", sans-serif;
 
-/* .experience-item:not(:first-of-type) {
-    margin-top: 1rem;
-} */
+.experience-item:not(:first-of-type) {
+    margin-top: 10rem;
+}
 
 .experience-item {
     min-height: 800px;
@@ -36,9 +36,9 @@ $font-family: "Quattrocento Sans", sans-serif;
     }
 
     .line {
-        position: relative;
+        position: absolute;
         text-align: left;
-        top: -5.25rem;
+        top: 24.75rem;
         height: 20.125rem;
         border-left: 0.125rem solid var(--text-1-600);
         display: flex;
@@ -346,7 +346,7 @@ $font-family: "Quattrocento Sans", sans-serif;
 
             .line {
                 top: 11.37rem;
-                right: calc(100svw - 82rem);
+                right: calc(100svw - 74rem);
                 left: unset;
                 width: 49.875rem;
 
@@ -362,6 +362,8 @@ $font-family: "Quattrocento Sans", sans-serif;
         }
 
         &.centered.vertical-top {
+            display: flex;
+            flex-direction: column-reverse;
             margin-top: 10rem;
 
             .circle {
@@ -373,32 +375,41 @@ $font-family: "Quattrocento Sans", sans-serif;
             .line {
                 --width: 30.6875rem;
                 --border-height: 24.1875rem;
-                top: -45rem;
+                top: 3rem;
                 left: calc((100svw - var(--width)) / 2 - 15.34375rem);
                 width: var(--width);
             }
 
             .quote {
                 right: calc((100svw - 30.6875rem) / 2 - 29rem);
-                top: -16rem;
+                top: 3.55rem;
             }
         }
 
         &.left-md {
+            display: flex;
+            align-items: flex-end;
+
             .line {
                 width: 49.875rem;
+                top: 25rem;
             }
 
             .quote {
                 left: 40.875rem;
+                top: unset;
+                bottom: 18rem;
             }
         }
 
         &.centered.vertical-bottom {
+            min-height: 1000px;
+
             .line {
                 --width: 31rem;
                 width: var(--width);
                 left: calc((100svw - var(--width)) / 2 - var(--width) / 2);
+                top: 27.75rem;
             }
 
             .quote {

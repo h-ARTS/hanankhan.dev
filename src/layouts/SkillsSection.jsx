@@ -19,7 +19,8 @@ const SkillsSection = () => {
             scrollTrigger: {
                 pin: true,
                 trigger: ".skills",
-                start: "90px top",
+                start: "top top",
+                markers: true,
                 end: () => `${innerHeight * 3}svh center`,
                 scrub: true,
             },
@@ -43,7 +44,7 @@ const SkillsSection = () => {
     })
 
     return (
-        <Container className="skills p-0">
+        <section className="skills container-fill p-0">
             <div className="marquee">
                 <div className="marquee-inner" ref={marqueeText}>
                     <Typography className="marquee-line text upper bold">
@@ -62,7 +63,7 @@ const SkillsSection = () => {
                     </Typography>
                 </div>
             </div>
-        </Container>
+        </section>
     )
 }
 

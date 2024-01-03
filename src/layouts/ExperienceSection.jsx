@@ -5,7 +5,6 @@ import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
 import ScrollTrigger from "gsap/ScrollTrigger"
 import Typography from "../components/Typography"
-import Container from "../components/Container"
 import ExperienceItem from "../components/ExperienceItem"
 import "./css/ExperienceSection.scss"
 
@@ -135,7 +134,7 @@ const ExperienceSection = () => {
     }, [isTablet, itemRefs.current])
 
     return (
-        <section className="experiences container-fluid">
+        <section className="experiences container-fluid g-0">
             <Typography
                 tag="h3"
                 className={`text upper ${
