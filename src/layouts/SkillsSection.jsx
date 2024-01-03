@@ -20,7 +20,6 @@ const SkillsSection = () => {
                 pin: true,
                 trigger: ".skills",
                 start: "top top",
-                markers: true,
                 end: () => `${innerHeight * 3}svh center`,
                 scrub: true,
             },
