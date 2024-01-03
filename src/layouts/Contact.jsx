@@ -18,7 +18,7 @@ const Contact = () => {
                 Let's connect
             </Typography>
             <div className="row g-0">
-                <div className="email col-12 col-md-5 offset-md-1">
+                <div className="email col-12 col-md-11 offset-md-1 col-lg-5 offset-lg-1">
                     <Typography className="contact-item lead display bold">
                         Email
                     </Typography>
@@ -28,7 +28,7 @@ const Contact = () => {
                         </a>
                     </Typography>
                 </div>
-                <div className="linkedin col-12 col-md-5 offset-md-1">
+                <div className="linkedin col-12 col-md-11 offset-md-1 col-lg-5 offset-lg-1">
                     <Typography className="contact-item lead display bold">
                         LinkedIn
                     </Typography>
@@ -36,7 +36,7 @@ const Contact = () => {
                         <a href="#">No recruiters allowed!</a>
                     </Typography>
                 </div>
-                <div className="github col-12 col-md-5 offset-md-1">
+                <div className="github col-12 col-md-11 offset-md-1 col-lg-5 offset-lg-1">
                     <Typography className="contact-item lead display bold">
                         Github
                     </Typography>
@@ -44,7 +44,7 @@ const Contact = () => {
                         <a href="#">I do awesome shit here!</a>
                     </Typography>
                 </div>
-                <div className="twitter col-12 col-md-5 offset-md-1">
+                <div className="twitter col-12 col-md-11 offset-md-1 col-lg-5 offset-lg-1">
                     <Typography className="contact-item lead display bold">
                         Twitter/X
                     </Typography>

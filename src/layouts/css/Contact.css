@@ -2,10 +2,6 @@
     margin-bottom: 3.62rem;
 }
 
-.contact .title {
-    text-align: center;
-}
-
 .contact a {
     font-size: 1.25rem;
     text-decoration: none;
@@ -23,6 +19,10 @@
 @media (min-width: 768px) {
     .contact {
         margin-bottom: 6.31rem;
+    }
+
+    .contact .title {
+        text-align: center;
     }
 
     .contact a {

@@ -1,12 +1,19 @@
 import React from "react"
+import { useMediaQuery } from "react-responsive"
 import Typography from "../components/Typography"
 import "./css/ExperienceItem.scss"
 
 const ExperienceItem = React.forwardRef(({ className = "", content }, ref) => {
+    const isTablet = useMediaQuery({ query: "(min-width: 768px)" })
+
+    const utilClassNames = isTablet
+        ? content.className
+        : content.mobileClassNames
+
     return (
         <section
             ref={ref}
-            className={`experience-item ${content.className || className}`}
+            className={`experience-item ${utilClassNames || className}`}
         >
             <div className="circle">
                 <div className="year">

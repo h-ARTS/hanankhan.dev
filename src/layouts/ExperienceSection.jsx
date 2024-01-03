@@ -19,6 +19,8 @@ const ExperienceSection = () => {
             quote: "The beginning of my journey",
             description:
                 "Built websites for various clients like Lustenberger, CrispyChicken, Fortress Gold Group and more..",
+            mobileClassNames: "left",
+            className: "left",
         },
         {
             year: 2016,
@@ -28,6 +30,7 @@ const ExperienceSection = () => {
             description:
                 "Built websites for various clients like Football Agency, Business Consulting Firms, Magazines",
             className: "right horizontal lg",
+            mobileClassNames: "right lg",
         },
         {
             year: 2017,
@@ -37,27 +40,29 @@ const ExperienceSection = () => {
             description:
                 "Built User Interfaces and replaced legacy IoT Dashboard, developed mobile app for our Nomos Home.",
             className: "centered vertical-top",
+            mobileClassNames: "left",
         },
         {
             year: 2020,
             position: "Software Engineer",
             location: "Digicomp Academy AG",
-            className: "left-md horizontal",
             quote: "Doing more great stuff",
             present: true,
             description:
                 "Integrated CMS System in a multi-complex web application. Developing and maintaining in-house built e-commerce site",
+            className: "left horizontal",
+            mobileClassNames: "right",
         },
         {
             year: 2023,
             position: "Software Engineer",
             location: "FHNW Rover Team",
             present: true,
-            className: "lg centered vertical-bottom",
             quote: "We secured 2nd place in European Rover Challenge!",
-            present: true,
             description:
                 "Implemented an energy reporting system in our Mission Control Center, utilizing the Robot Operating System (ROS). Integrated this system seamlessly with NASA's OpenMCT for effective energy monitoring and power controlling. Upgraded the entire control center from Vanilla JavaScript to a Vue3 and TypeScript environment.",
+            className: "centered vertical-bottom lg",
+            mobileClassNames: "left lg",
         },
     ]
 
@@ -75,49 +80,55 @@ const ExperienceSection = () => {
             const isVertical = item
                 .getAttribute("class")
                 .includes(["vertical-top", "vertical-bottom"])
-            const isLeftMd = item.getAttribute("class").includes("left-md")
+            const isLeftMd = item.getAttribute("class").includes("left")
             const isCenter = item.getAttribute("class").includes("centered")
-            const propsCircle = isCenter ? center : isRight ? right : left
-            const propsContent = isLeftMd
-                ? { translateX: -10 }
-                : isRight || !isVertical
-                ? { translateX: window.innerWidth - window.innerWidth + 20 }
-                : { translateX: -10 }
 
             const start = isTablet ? "-=7% center" : "-=3% 10%"
+
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: item,
+                    start,
+                    pin: !isTablet,
+                    scrub: false,
+                    toggleActions: "play none play reverse",
+                },
+            })
+            // right? left? centered?
+            const propsCircle = isCenter ? center : isRight ? right : left
+            tl.from(item.querySelector(".circle"), {
+                scale: 0,
+                ...propsCircle,
+                duration: 0.6,
+            })
+
             const linePropsFrom =
                 isHorizontal && isTablet ? { width: 0 } : { height: 0 }
             const linePropsVertical = isVertical && {
                 "--border-height": 0,
                 height: 0,
             }
+            // right? left? horizontal? centered?
+            tl.from(item.querySelector(".line"), {
+                ...linePropsVertical,
+                ...linePropsFrom,
+                duration: 0.6,
+                ease: "power3.out",
+            })
 
-            const tl = gsap
-                .timeline({
-                    scrollTrigger: {
-                        trigger: item,
-                        start,
-                        pin: !isTablet,
-                        scrub: false,
-                        toggleActions: "play none play reverse",
-                    },
-                })
-                .from(item.querySelector(".circle"), {
-                    scale: 0,
-                    ...propsCircle,
-                    duration: 0.6,
-                })
-                .from(item.querySelector(".line"), {
-                    ...linePropsVertical,
-                    ...linePropsFrom,
-                    duration: 0.6,
-                    ease: "power3.out",
-                })
-                .from(item.querySelector(".content"), {
-                    ...propsContent,
-                    opacity: 0,
-                    duration: 0.6,
-                })
+            const propsContent = isLeftMd
+                ? { translateX: -10 }
+                : isRight || !isVertical
+                ? {
+                      translateX: window.innerWidth - window.innerWidth + 20,
+                  }
+                : { translateX: -10 }
+            // right? left? centered?
+            tl.from(item.querySelector(".content"), {
+                ...propsContent,
+                opacity: 0,
+                duration: 0.6,
+            })
 
             if (isTablet) {
                 tl.from(
@@ -131,7 +142,7 @@ const ExperienceSection = () => {
                 )
             }
         })
-    }, [isTablet, itemRefs.current])
+    }, [isTablet, window.innerWidth])
 
     return (
         <section className="experiences container-fluid g-0">
