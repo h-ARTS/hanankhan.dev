@@ -1,6 +1,6 @@
 import React from "react"
 import Typography from "../components/Typography"
-import "./css/ExperienceItem.css"
+import "./css/ExperienceItem.scss"
 
 const ExperienceItem = React.forwardRef(({ className = "", content }, ref) => {
     return (

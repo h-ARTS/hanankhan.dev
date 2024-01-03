@@ -1,0 +1,16 @@
+.experiences {
+    position: relative;
+    margin-top: 6.59rem;
+
+    .title {
+        margin-bottom: 4rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .experiences {
+        .title {
+            text-align: center;
+        }
+    }
+}

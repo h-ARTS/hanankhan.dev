@@ -7,7 +7,7 @@ import ScrollTrigger from "gsap/ScrollTrigger"
 import Typography from "../components/Typography"
 import Container from "../components/Container"
 import ExperienceItem from "../components/ExperienceItem"
-import "./css/ExperienceSection.css"
+import "./css/ExperienceSection.scss"
 
 const ExperienceSection = () => {
     const isTablet = useMediaQuery({ query: "(min-width: 768px)" })
@@ -43,7 +43,7 @@ const ExperienceSection = () => {
             year: 2020,
             position: "Software Engineer",
             location: "Digicomp Academy AG",
-            className: "right",
+            className: "left-md right",
             quote: "Doing more great stuff",
             description:
                 "Integrated CMS System in a multi-complex web application. Developing and maintaining in-house built e-commerce site",

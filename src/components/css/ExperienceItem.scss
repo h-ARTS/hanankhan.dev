@@ -1,0 +1,219 @@
+$text_2_400: var(--text-2-400, #d4d7d3);
+$text_2_600: var(--text-2-600, #c9ccbe);
+$text_2_700: var(--text-2-700, #bdbfac);
+$primary_500: var(--primary-500, #6288db);
+$font-family: "Quattrocento Sans", sans-serif;
+
+/* .experience-item:not(:first-of-type) {
+    margin-top: 1rem;
+} */
+
+.experience-item {
+    min-height: 800px;
+
+    .quote {
+        display: none;
+        quotes: "«" "»";
+    }
+
+    .circle {
+        position: relative;
+        width: 19.5625rem;
+        height: 19.5625rem;
+        background: var(--background-100, #323548);
+        border-radius: 19.5625rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        left: -3.25rem;
+    }
+
+    .year {
+        h1 {
+            font-size: 5.25rem;
+            letter-spacing: 0.1575rem;
+        }
+    }
+
+    .line {
+        position: relative;
+        text-align: left;
+        top: -5.25rem;
+        height: 20.125rem;
+        border-left: 0.125rem solid var(--text-1-600);
+        display: flex;
+        flex-direction: column-reverse;
+
+        .content {
+            position: relative;
+            bottom: 0;
+            right: 0;
+            margin: 0 1.06rem;
+        }
+
+        h3 {
+            color: $primary_500;
+            font-size: 1.75rem;
+            letter-spacing: 0.0525rem;
+            line-height: 2.8rem;
+        }
+
+        .company {
+            display: block !important;
+            color: $text_2_400;
+            font-size: 1.125rem;
+            line-height: 1.8rem;
+            letter-spacing: 0.03375rem;
+        }
+    }
+
+    .description {
+        color: $text_2_700;
+        font-size: 1.125rem;
+        line-height: 1.8rem;
+        letter-spacing: 0.03375rem;
+    }
+}
+
+.experience-item.lg {
+    .circle {
+        width: 21.3125rem;
+        height: 21.3125rem;
+        left: -3.89rem;
+    }
+}
+
+.experience-item.right {
+    .circle {
+        left: unset;
+        right: calc(18.76rem - 100svw);
+    }
+
+    .line {
+        text-align: right;
+        border-left: none;
+        border-right: 0.125rem solid var(--text-1-600);
+    }
+}
+
+.experience-item.right.lg {
+    .circle {
+        right: calc(20rem - 100svw);
+    }
+}
+
+.experience-item.height-1 {
+    .line {
+        height: 22.125rem;
+    }
+}
+
+.experience-item.height-2 {
+    .line {
+        height: 25.125rem;
+    }
+}
+
+.experience-item.height-3 {
+    .line {
+        height: 29.125rem;
+    }
+}
+
+.experiences-item {
+    .year {
+        color: $text_2_700;
+    }
+}
+
+@media (min-width: 768px) {
+    .experience-item {
+        position: relative;
+
+        .line {
+            left: calc((19.5625rem) / 3);
+            width: 21.6875rem;
+        }
+
+        .quote {
+            position: absolute;
+            font-family: $font-family;
+            font-size: 1.4375rem;
+            font-weight: 400;
+            line-height: 160%;
+            letter-spacing: 0.48875rem;
+            display: block;
+            top: calc(19.5625rem / 2.6);
+            width: 20rem;
+            left: 18.25rem;
+            color: $text_2_600;
+        }
+    }
+
+    .experience-item.right.horizontal {
+        position: relative;
+
+        .line {
+            position: absolute;
+            border-right: 0;
+            border-bottom: 0.125rem solid var(--text-1-600);
+            width: 32.5rem;
+            left: unset;
+            right: 6.88rem;
+            top: 4.37rem;
+            height: unset;
+            padding-bottom: 1.87rem;
+            flex-direction: column;
+
+            .content {
+                width: 20rem;
+                right: 2.3rem;
+            }
+        }
+
+        .quote {
+            left: unset;
+            right: 20rem;
+            text-align: right;
+            top: 18rem;
+        }
+    }
+
+    .experience-item.centered.vertical-top {
+        .circle {
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+        }
+
+        .line {
+            --border-height: 20rem;
+            height: var(--border-height);
+            top: -35rem;
+            left: calc(((100svw - 21.6875rem) / 2) - 11.84375rem);
+            border-left: 0;
+            text-align: right;
+            flex-direction: column;
+            overflow: hidden;
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 0.125rem;
+                height: var(--border-height);
+                background: var(--text-1-600);
+            }
+
+            .content {
+                right: 0.88rem;
+            }
+        }
+
+        .quote {
+            left: unset;
+            right: 0.78rem;
+            top: -15rem;
+        }
+    }
+}
