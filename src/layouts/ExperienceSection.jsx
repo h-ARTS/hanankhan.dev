@@ -37,6 +37,7 @@ const ExperienceSection = () => {
             quote: "The golden era of my career",
             description:
                 "Built User Interfaces and replaced legacy IoT Dashboard, developed mobile app for our Nomos Home.",
+            className: "centered vertical-top",
         },
         {
             year: 2020,
@@ -62,6 +63,7 @@ const ExperienceSection = () => {
     gsap.registerPlugin(ScrollTrigger)
     const right = { x: window.innerWidth - 300 }
     const left = { x: -100 }
+    const center = { y: 140, x: 0 }
 
     useGSAP(() => {
         itemRefs.current.forEach((item) => {
@@ -69,14 +71,25 @@ const ExperienceSection = () => {
             const isHorizontal = item
                 .getAttribute("class")
                 .includes("horizontal")
-            const propsCircle = isRight ? right : left
-            const propsContent = isRight
-                ? {
-                      translateX: window.innerWidth - window.innerWidth + 20,
-                  }
-                : { translateX: -10 }
-            const start = isTablet ? "-=7% 300px" : "-=3% 10%"
-            const linePropsFrom = isHorizontal ? { width: 0 } : { height: 0 }
+            const isVertical = item
+                .getAttribute("class")
+                .includes(["vertical-top", "vertical-bottom"])
+            const isCenter = item.getAttribute("class").includes("centered")
+            const propsCircle = isCenter ? center : isRight ? right : left
+            const propsContent =
+                isRight || !isVertical
+                    ? {
+                          translateX:
+                              window.innerWidth - window.innerWidth + 20,
+                      }
+                    : { translateX: -10 }
+            const start = isTablet ? "-=7% 380px" : "-=3% 10%"
+            const linePropsFrom =
+                isHorizontal && isTablet ? { width: 0 } : { height: 0 }
+            const linePropsVertical = isVertical && {
+                "--border-height": 0,
+                height: 0,
+            }
 
             const tl = gsap
                 .timeline({
@@ -95,6 +108,7 @@ const ExperienceSection = () => {
                     duration: 0.6,
                 })
                 .from(item.querySelector(".line"), {
+                    ...linePropsVertical,
                     ...linePropsFrom,
                     duration: 0.6,
                     ease: "power3.out",
@@ -117,14 +131,14 @@ const ExperienceSection = () => {
                 )
             }
         })
-    })
+    }, [isTablet])
 
     return (
         <Container id="experiences" className="experiences">
             <Typography
                 tag="h3"
                 className={`text upper ${
-                    isTablet ? "lead" : normal
+                    isTablet ? "lead" : "normal"
                 } spread bold title`}
             >
                 Experiences
