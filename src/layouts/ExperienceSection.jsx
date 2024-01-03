@@ -43,8 +43,9 @@ const ExperienceSection = () => {
             year: 2020,
             position: "Software Engineer",
             location: "Digicomp Academy AG",
-            className: "left-md right",
+            className: "left-md horizontal",
             quote: "Doing more great stuff",
+            present: true,
             description:
                 "Integrated CMS System in a multi-complex web application. Developing and maintaining in-house built e-commerce site",
         },
@@ -53,8 +54,9 @@ const ExperienceSection = () => {
             position: "Software Engineer",
             location: "FHNW Rover Team",
             present: true,
-            className: "lg height-3",
+            className: "lg centered vertical-bottom",
             quote: "We secured 2nd place in European Rover Challenge!",
+            present: true,
             description:
                 "Implemented an energy reporting system in our Mission Control Center, utilizing the Robot Operating System (ROS). Integrated this system seamlessly with NASA's OpenMCT for effective energy monitoring and power controlling. Upgraded the entire control center from Vanilla JavaScript to a Vue3 and TypeScript environment.",
         },
@@ -74,16 +76,16 @@ const ExperienceSection = () => {
             const isVertical = item
                 .getAttribute("class")
                 .includes(["vertical-top", "vertical-bottom"])
+            const isLeftMd = item.getAttribute("class").includes("left-md")
             const isCenter = item.getAttribute("class").includes("centered")
             const propsCircle = isCenter ? center : isRight ? right : left
-            const propsContent =
-                isRight || !isVertical
-                    ? {
-                          translateX:
-                              window.innerWidth - window.innerWidth + 20,
-                      }
-                    : { translateX: -10 }
-            const start = isTablet ? "-=7% 380px" : "-=3% 10%"
+            const propsContent = isLeftMd
+                ? { translateX: -10 }
+                : isRight || !isVertical
+                ? { translateX: window.innerWidth - window.innerWidth + 20 }
+                : { translateX: -10 }
+
+            const start = isTablet ? "-=7% center" : "-=3% 10%"
             const linePropsFrom =
                 isHorizontal && isTablet ? { width: 0 } : { height: 0 }
             const linePropsVertical = isVertical && {
@@ -125,16 +127,16 @@ const ExperienceSection = () => {
                     {
                         duration: 0.6,
                         opacity: 0,
-                        x: isHorizontal ? 20 : -20,
+                        x: isHorizontal && isRight ? 20 : -20,
                     },
-                    ">0.4"
+                    ">0.3"
                 )
             }
         })
-    }, [isTablet])
+    }, [isTablet, itemRefs.current])
 
     return (
-        <Container id="experiences" className="experiences">
+        <section className="experiences container-fluid">
             <Typography
                 tag="h3"
                 className={`text upper ${
@@ -150,7 +152,7 @@ const ExperienceSection = () => {
                     key={idx}
                 />
             ))}
-        </Container>
+        </section>
     )
 }
 

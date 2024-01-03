@@ -90,6 +90,7 @@ $font-family: "Quattrocento Sans", sans-serif;
     }
 
     .line {
+        right: 3rem;
         text-align: right;
         border-left: none;
         border-right: 0.125rem solid var(--text-1-600);
@@ -151,13 +152,11 @@ $font-family: "Quattrocento Sans", sans-serif;
     }
 
     .experience-item.right.horizontal {
-        position: relative;
-
         .line {
             position: absolute;
             border-right: 0;
             border-bottom: 0.125rem solid var(--text-1-600);
-            width: 32.5rem;
+            width: 34.5rem;
             left: unset;
             right: 6.88rem;
             top: 4.37rem;
@@ -172,8 +171,8 @@ $font-family: "Quattrocento Sans", sans-serif;
         }
 
         .quote {
-            left: unset;
-            right: 20rem;
+            left: calc(100svw - 42.2125rem);
+            right: unset;
             text-align: right;
             top: 18rem;
         }
@@ -190,7 +189,7 @@ $font-family: "Quattrocento Sans", sans-serif;
             --border-height: 20rem;
             height: var(--border-height);
             top: -35rem;
-            left: calc(((100svw - 21.6875rem) / 2) - 11.84375rem);
+            left: calc((100svw - 21.6875rem) / 2 - 10.84375rem);
             border-left: 0;
             text-align: right;
             flex-direction: column;
@@ -212,8 +211,199 @@ $font-family: "Quattrocento Sans", sans-serif;
 
         .quote {
             left: unset;
-            right: 0.78rem;
+            right: calc((100svw - 21.8125rem) / 2 - 11rem);
             top: -15rem;
+        }
+    }
+
+    .experience-item.left-md {
+        .circle {
+            left: -3.12rem;
+            right: unset;
+        }
+
+        .line {
+            position: absolute;
+            border-left: unset;
+            border-right: unset;
+            border-bottom: 0.125rem solid var(--text-1-600);
+            width: 37rem;
+            height: unset;
+            padding-bottom: 1.87rem;
+            flex-direction: column;
+            text-align: left;
+            top: 3.37rem;
+
+            .content {
+                position: absolute;
+                width: 22.25rem;
+                bottom: 1.87rem;
+                margin: 0;
+                right: 0;
+            }
+        }
+
+        .quote {
+            width: fit-content;
+            top: 7.024038rem;
+            left: 21.25rem;
+        }
+    }
+
+    .experience-item.centered.vertical-bottom {
+        .circle {
+            left: unset;
+            margin: 0 auto;
+        }
+
+        .line {
+            --border-height: 29.875rem;
+            height: var(--border-height);
+            top: -5.25rem;
+            left: calc(((100svw - 21.6875rem) / 2) - 10.84375rem);
+            border-left: 0;
+            text-align: right;
+            flex-direction: column-reverse;
+            overflow: hidden;
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 0.125rem;
+                height: var(--border-height);
+                background: var(--text-1-600);
+            }
+
+            .content {
+                right: 0.88rem;
+            }
+        }
+
+        .quote {
+            bottom: 5rem;
+            width: 20rem;
+            left: calc((100svw + 3.3125rem) / 2);
+            top: unset;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .experience-item {
+        .circle {
+            width: 32.8125rem;
+            height: 32.8125rem;
+        }
+
+        &.lg {
+            .circle {
+                width: 33.9375rem;
+                height: 33.9375rem;
+            }
+        }
+
+        .year {
+            h1 {
+                font-size: 8.125rem;
+                line-height: 90%;
+                letter-spacing: 0.08125rem;
+                user-select: none;
+            }
+        }
+
+        .line {
+            height: 24.1875rem;
+            left: calc(32.8125rem - 19.6875rem);
+
+            .content {
+                h3 {
+                    font-size: 2.5rem;
+                    line-height: 160%;
+                }
+
+                .company {
+                    font-size: 1.4375rem;
+                    line-height: 160%;
+                }
+
+                .description {
+                    font-size: 1.25rem;
+                    line-height: 160%;
+                }
+            }
+        }
+
+        .quote {
+            font-size: 2.125rem;
+            width: fit-content;
+        }
+
+        &.right.horizontal {
+            .circle {
+                right: calc(33.9375rem - 100svw);
+            }
+
+            .line {
+                top: 11.37rem;
+                right: calc(100svw - 82rem);
+                left: unset;
+                width: 49.875rem;
+
+                .content {
+                    width: 28rem;
+                }
+            }
+
+            .quote {
+                left: calc(100svw - 79.6rem);
+                top: 25rem;
+            }
+        }
+
+        &.centered.vertical-top {
+            margin-top: 10rem;
+
+            .circle {
+                width: 28.4375rem;
+                height: 28.4375rem;
+                background: var(--background-100);
+            }
+
+            .line {
+                --width: 30.6875rem;
+                --border-height: 24.1875rem;
+                top: -45rem;
+                left: calc((100svw - var(--width)) / 2 - 15.34375rem);
+                width: var(--width);
+            }
+
+            .quote {
+                right: calc((100svw - 30.6875rem) / 2 - 29rem);
+                top: -16rem;
+            }
+        }
+
+        &.left-md {
+            .line {
+                width: 49.875rem;
+            }
+
+            .quote {
+                left: 40.875rem;
+            }
+        }
+
+        &.centered.vertical-bottom {
+            .line {
+                --width: 31rem;
+                width: var(--width);
+                left: calc((100svw - var(--width)) / 2 - var(--width) / 2);
+            }
+
+            .quote {
+                width: 35rem;
+            }
         }
     }
 }

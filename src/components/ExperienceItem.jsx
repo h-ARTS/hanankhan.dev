@@ -20,7 +20,15 @@ const ExperienceItem = React.forwardRef(({ className = "", content }, ref) => {
                         {content.position}
                     </Typography>
                     <Typography tag="h5" className="text bold normal company">
-                        {content.location}
+                        {content.location}&nbsp;&nbsp;
+                        {content.present && (
+                            <Typography
+                                tag="span"
+                                className="text caption normal"
+                            >
+                                (present)
+                            </Typography>
+                        )}
                     </Typography>
                     <Typography className="description">
                         {content.description}
