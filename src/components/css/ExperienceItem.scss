@@ -132,8 +132,9 @@ $font-family: "Quattrocento Sans", sans-serif;
         position: relative;
 
         .line {
-            left: calc((19.5625rem) / 3);
             width: 21.6875rem;
+            left: calc((19.5625rem) / 3);
+            top: 15rem;
         }
 
         .quote {
@@ -188,7 +189,7 @@ $font-family: "Quattrocento Sans", sans-serif;
         .line {
             --border-height: 20rem;
             height: var(--border-height);
-            top: -35rem;
+            top: -15.5rem;
             left: calc((100svw - 21.6875rem) / 2 - 10.84375rem);
             border-left: 0;
             text-align: right;
@@ -259,7 +260,7 @@ $font-family: "Quattrocento Sans", sans-serif;
         .line {
             --border-height: 29.875rem;
             height: var(--border-height);
-            top: -5.25rem;
+            // top: -5.25rem;
             left: calc(((100svw - 21.6875rem) / 2) - 10.84375rem);
             border-left: 0;
             text-align: right;
@@ -313,8 +314,9 @@ $font-family: "Quattrocento Sans", sans-serif;
         }
 
         .line {
-            height: 24.1875rem;
+            height: 27.1875rem;
             left: calc(32.8125rem - 19.6875rem);
+            top: 22rem;
 
             .content {
                 h3 {
@@ -346,7 +348,7 @@ $font-family: "Quattrocento Sans", sans-serif;
 
             .line {
                 top: 11.37rem;
-                right: calc(100svw - 74rem);
+                right: 17rem;
                 left: unset;
                 width: 49.875rem;
 
@@ -356,7 +358,7 @@ $font-family: "Quattrocento Sans", sans-serif;
             }
 
             .quote {
-                left: calc(100svw - 79.6rem);
+                left: calc(100svw - 56.6rem);
                 top: 25rem;
             }
         }
@@ -381,8 +383,9 @@ $font-family: "Quattrocento Sans", sans-serif;
             }
 
             .quote {
-                right: calc((100svw - 30.6875rem) / 2 - 29rem);
-                top: 3.55rem;
+                right: calc((100svw - 30.6875rem) / 2 - 18rem);
+                top: 3.3rem;
+                width: 31rem;
             }
         }
 
