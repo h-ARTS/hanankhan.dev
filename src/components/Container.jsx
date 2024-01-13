@@ -1,5 +1,5 @@
 import React from "react"
-import "./css/Container.css"
+import "./scss/Container.scss"
 
 const Container = ({ id, className, children }) => {
     return (

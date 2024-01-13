@@ -1,5 +1,5 @@
 import React from "react"
-import "./css/Typography.css"
+import "./scss/Typography.scss"
 
 const Typography = React.forwardRef(
     ({ tag = "p", className = "", children }, ref) => {

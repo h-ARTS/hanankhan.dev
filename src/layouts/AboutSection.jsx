@@ -6,7 +6,7 @@ import ScrollTrigger from "gsap/ScrollTrigger"
 import SplitType from "split-type"
 import Typography from "../components/Typography"
 import Container from "../components/Container"
-import "./css/AboutSection.css"
+import "./scss/AboutSection.scss"
 
 const AboutSection = () => {
     const isTablet = useMediaQuery({
@@ -16,9 +16,9 @@ const AboutSection = () => {
     gsap.registerPlugin(ScrollTrigger)
 
     useGSAP(() => {
-        const text = new SplitType(reveal.current, { types: "chars" })
+        const text = new SplitType(reveal.current, { types: "words" })
 
-        gsap.from(text.chars, {
+        gsap.from(text.words, {
             scrollTrigger: {
                 trigger: reveal.current,
                 start: "-=26% 70%",

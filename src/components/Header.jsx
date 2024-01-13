@@ -1,6 +1,6 @@
 import { useRef, useState } from "react"
 import { useMediaQuery } from "react-responsive"
-import "./css/Header.css"
+import "./scss/Header.scss"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
 import BurgerMenu from "./BurgerMenu"

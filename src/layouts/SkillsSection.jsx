@@ -1,6 +1,5 @@
 import { useRef } from "react"
-import "./css/SkillsSection.css"
-import Container from "../components/Container"
+import "./scss/SkillsSection.scss"
 import Typography from "../components/Typography"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"

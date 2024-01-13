@@ -6,7 +6,8 @@ import nomos from "../assets/Nomos_Home_1.png"
 import nomosBig from "../assets/Nomos_Home_Big.png"
 import digi from "../assets/digidev_1.png"
 import digiBig from "../assets/digiweb_big.png"
-import "./css/ProjectShowcases.css"
+import siege from "../assets/level1.png"
+import "./scss/ProjectShowcases.scss"
 import Container from "../components/Container"
 import Typography from "../components/Typography"
 import ShowcaseItem from "../components/ShowcaseItem"
@@ -21,25 +22,34 @@ const ProjectShowcaseSection = () => {
     const isTablet = useMediaQuery({ query: "(min-width: 768px)" })
     const items = [
         {
-            img: isTablet ? vibooImageBig : vibooImage,
-            title: "Viboo",
-            caption: "Mobile design",
+            img: siege,
+            title: "Siege Breaker: Break The Reign",
+            caption: "Game Development",
             className: "",
             colClasses: "col-12 col-sm-10 col-md-6",
         },
         {
-            img: isTablet ? nomosBig : nomos,
-            title: "Nomos Home",
-            caption: "Mobile app development",
+            img: isTablet ? vibooImageBig : vibooImage,
+            title: "Viboo",
+            caption: "Mobile design",
             className: "text-right right",
             colClasses:
                 "col-12 mt-5 col-sm-10 offset-sm-2 col-md-6 offset-md-6",
         },
         {
+            img: isTablet ? nomosBig : nomos,
+            title: "Nomos Home",
+            caption: "Mobile app development",
+            className: "",
+            colClasses: "col-12 col-sm-10 col-md-6",
+        },
+        {
             img: isTablet ? digiBig : digi,
             title: "Digicomp Academy AG",
             caption: "Web Engineering",
-            colClasses: "col-12 mt-5 col-sm-10 col-md-6",
+            className: "text-right right",
+            colClasses:
+                "col-12 mt-5 col-sm-10 offset-sm-2 col-md-6 offset-md-6",
         },
     ]
 

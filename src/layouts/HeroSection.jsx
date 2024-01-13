@@ -1,6 +1,6 @@
 import { useRef } from "react"
 import { useMediaQuery } from "react-responsive"
-import "./css/HeroSection.css"
+import "./scss/HeroSection.scss"
 import addToRefs from "../utils/addToRefs"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
@@ -84,27 +84,14 @@ const HeroSection = () => {
         lineRefs.current.forEach((line, index) => {
             const firstLetter = line.querySelector(".first-letter")
 
-            /**
-             * Wir nehmen die erste Buchstabe und animieren es von oben nach unten,
-             * als wäre die Buchstabe hinter einer Maske.
-             */
             gsap.to(firstLetter, {
                 delay: index * 0.5,
                 duration: 0.75,
                 translateY: 0,
                 ease: "power1.inOut",
-                /**
-                 * Sobald eine Buchstabe fertig animiert wurde, zählen wir
-                 * den completedS hoch.
-                 */
                 onComplete: () => {
                     completedS++
                     if (completedS === totalS) {
-                        /**
-                         * Sobald alle animiert wurden, iterieren wir
-                         * die maskRefs durch, welche während des Renders ins Array gepusht wurden,
-                         * um die restlichen Texte einzublenden.
-                         */
                         maskRefs.current.forEach((m) => {
                             gsap.to(m, {
                                 duration: 1.25,

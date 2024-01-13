@@ -6,7 +6,7 @@ import { useGSAP } from "@gsap/react"
 import ScrollTrigger from "gsap/ScrollTrigger"
 import Typography from "../components/Typography"
 import ExperienceItem from "../components/ExperienceItem"
-import "./css/ExperienceSection.scss"
+import "./scss/ExperienceSection.scss"
 
 const ExperienceSection = () => {
     const isTablet = useMediaQuery({ query: "(min-width: 768px)" })
@@ -145,7 +145,7 @@ const ExperienceSection = () => {
     }, [isTablet, window.innerWidth])
 
     return (
-        <section className="experiences container-fluid g-0">
+        <section id="experiences" className="experiences container-fluid g-0">
             <Typography
                 tag="h3"
                 className={`text upper ${

@@ -1,7 +1,7 @@
 import React from "react"
 import { useMediaQuery } from "react-responsive"
 import Typography from "../components/Typography"
-import "./css/ExperienceItem.scss"
+import "./scss/ExperienceItem.scss"
 
 const ExperienceItem = React.forwardRef(({ className = "", content }, ref) => {
     const isTablet = useMediaQuery({ query: "(min-width: 768px)" })

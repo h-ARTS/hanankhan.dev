@@ -1,8 +1,7 @@
-import React from "react"
 import { useMediaQuery } from "react-responsive"
 import Container from "../components/Container"
 import Typography from "../components/Typography"
-import "./css/Contact.css"
+import "./scss/Contact.scss"
 
 const Contact = () => {
     const isTablet = useMediaQuery({ query: "(min-width: 768px)" })
@@ -33,7 +32,7 @@ const Contact = () => {
                         LinkedIn
                     </Typography>
                     <Typography className="text upper normal">
-                        <a href="#">No recruiters allowed!</a>
+                        <a href="#">Chat with me!</a>
                     </Typography>
                 </div>
                 <div className="github col-12 col-md-11 offset-md-1 col-lg-5 offset-lg-1">

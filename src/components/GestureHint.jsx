@@ -1,5 +1,5 @@
 import { useRef } from "react"
-import "./css/GestureHint.css"
+import "./scss/GestureHint.scss"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
 import swipeUpSvg from "../assets/swipe-up.svg"
