@@ -44,10 +44,6 @@
     padding: 0;
 }
 
-canvas {
-    user-select: none;
-}
-
 html,
 body {
     font-family: "Jost", sans-serif;
@@ -77,6 +73,10 @@ a:active {
 
 a:focus-visible {
     outline: 0;
+}
+
+canvas {
+    user-select: none;
 }
 
 .text-base {
