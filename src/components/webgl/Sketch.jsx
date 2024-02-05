@@ -5,7 +5,6 @@ import Particles from "./Particles"
 import sample from "../../assets/sample7.png"
 import { WebGLContext } from "../../layouts/WebGLContext"
 import { GUI } from "dat.gui"
-import { PerspectiveCamera } from "three"
 import { useGSAP } from "@gsap/react"
 
 const Sketch = () => {

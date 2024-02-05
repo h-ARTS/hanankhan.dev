@@ -1,10 +1,9 @@
-import React, { useRef, useState, Suspense, useEffect } from "react"
+import React, { useRef, useState, Suspense } from "react"
 import { useMediaQuery } from "react-responsive"
 import { Canvas } from "@react-three/fiber"
 import Sketch from "./Sketch"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
-import { GUI } from "dat.gui"
 
 const WebGLView = () => {
     const webglRef = useRef()

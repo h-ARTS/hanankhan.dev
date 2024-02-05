@@ -8,8 +8,6 @@ import ScrollTrigger from "gsap/ScrollTrigger"
 import LabelMobile from "../components/LeadLabelMobile"
 import Label from "../components/LeadLabel"
 import GestureHint from "../components/GestureHint"
-import WebGLView from "../components/webgl/WebGLView"
-import { WebGLContext } from "./WebGLContext"
 
 const HeroSection = () => {
     gsap.registerPlugin(ScrollTrigger)
