@@ -1,11 +1,11 @@
-import { useRef, useState } from "react"
+import { useRef, useState, lazy } from "react"
 import { useMediaQuery } from "react-responsive"
 import "./scss/Header.scss"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
 import BurgerMenu from "./BurgerMenu"
 import Logo from "./Logo"
-import Overlay from "./Overlay"
+const Overlay = lazy(() => import("./Overlay"))
 
 const BACKGROUND_400 = "#13141C"
 

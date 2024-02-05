@@ -35,7 +35,7 @@ function raf(time) {
 requestAnimationFrame(raf)
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-    <React.StrictMode>
-        <App lenis={lenis} />
-    </React.StrictMode>
+    // <React.StrictMode>
+    <App lenis={lenis} />
+    // </React.StrictMode>
 )

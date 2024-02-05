@@ -1,4 +1,5 @@
 import Header from "./components/Header"
+import WebGLView from "./components/webgl/WebGLView"
 import HeroSection from "./layouts/HeroSection"
 import AboutSection from "./layouts/AboutSection"
 import ProjectShowcaseSection from "./layouts/ProjectShowcaseSection"
@@ -11,6 +12,7 @@ function App({ lenis }) {
 
     return (
         <>
+            <WebGLView />
             <Header />
             <main>
                 <HeroSection />

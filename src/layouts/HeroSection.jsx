@@ -13,13 +13,14 @@ import { WebGLContext } from "./WebGLContext"
 
 const HeroSection = () => {
     gsap.registerPlugin(ScrollTrigger)
+
     const isMobile = useMediaQuery({ query: "(max-width: 576px)" })
     const isTablet = useMediaQuery({
         query: "(min-width: 768px) and (max-width: 991px)",
     })
     const isDesktop = useMediaQuery({ query: "(min-width: 992px)" })
     const webglRef = useRef()
-    const containerRef = useRef()
+    // const containerRef = useRef()
     const lineRefs = useRef([])
     const maskRefs = useRef([])
     const contents = [
@@ -40,22 +41,22 @@ const HeroSection = () => {
             gsap.to(".hero-text", { width: "fit-content" }, 0)
         }
 
-        if (isDesktop) {
-            gsap.fromTo(
-                webglRef.current,
-                {
-                    y: -80,
-                },
-                {
-                    scrollTrigger: {
-                        start: "top",
-                        end: "+=600px",
-                        scrub: true,
-                    },
-                    y: 0,
-                }
-            )
-        }
+        // if (isDesktop) {
+        //     gsap.fromTo(
+        //         webglRef.current,
+        //         {
+        //             y: -80,
+        //         },
+        //         {
+        //             scrollTrigger: {
+        //                 start: "top",
+        //                 end: "+=600px",
+        //                 scrub: true,
+        //             },
+        //             y: 0,
+        //         }
+        //     )
+        // }
     }, [isMobile, isTablet, isDesktop])
 
     const runHeroAnimationMobile = () => {
@@ -131,14 +132,14 @@ const HeroSection = () => {
                     </div>
                     {isMobile && <GestureHint />}
                 </div>
-                <div
+                {/* <div
                     className="col-12 mt-5 col-sm-8 offset-sm-2 mt-sm-0 col-md-6 offset-md-0 pt-xl-5 webgl"
                     ref={containerRef}
                 >
                     <WebGLContext.Provider value={containerRef}>
                         <WebGLView ref={webglRef} />
                     </WebGLContext.Provider>
-                </div>
+                </div> */}
             </div>
         </section>
     )

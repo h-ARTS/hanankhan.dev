@@ -79,6 +79,15 @@ canvas {
     user-select: none;
 }
 
+.canvas {
+    height: 100%;
+    width: 100vw;
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    left: 0;
+}
+
 .text-base {
     color: var(--text-2-base);
 }
